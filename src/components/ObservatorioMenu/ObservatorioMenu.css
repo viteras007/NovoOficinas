@@ -1,0 +1,25 @@
+div#top{
+    margin-bottom: 60px;
+}
+
+.navbar-inverse {
+    background-color: #00510F;
+    border-color: #00510F;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+}
+
+body a {
+    color: #00510F;
+    text-decoration: none;
+}
+
+body a:hover {
+    color: #00510F;
+}

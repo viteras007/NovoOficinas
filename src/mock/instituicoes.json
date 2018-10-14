@@ -1,0 +1,38 @@
+[
+    {
+       "id":1,
+       "nome":"IFTM Uberaba Parque Tecnológico",
+       "sigla":"IFTM - URAPT",
+       "quantidadeProfessores":52
+    },
+    {
+       "id":2,
+       "nome":"IFTM Uberaba",
+       "sigla":"IFTM - URA",
+       "quantidadeProfessores":120
+    },
+    {
+       "id":3,
+       "nome":"IFTM Uberlândia",
+       "sigla":"IFTM - UDI",
+       "quantidadeProfessores":135
+    },
+    {
+       "id":4,
+       "nome":"IFTM Uberlândia Centro",
+       "sigla":"IFTM - UDIC",
+       "quantidadeProfessores":54
+    },
+    {
+       "id":5,
+       "nome":"IFTM Patrocínio",
+       "sigla":"IFTM - PAT",
+       "quantidadeProfessores":60
+    },
+    {
+       "id":0,
+       "nome":"Todos os campi do IFTM",
+       "sigla":"IFTM",
+       "quantidadeProfessores":500
+    }
+ ]
