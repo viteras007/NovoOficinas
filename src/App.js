@@ -27,9 +27,17 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      Route: 'l'
+      Route: 'home'
+      // ADD OS DADOS DO USUARIO PARA RECEBER DA PAGINA LOGIN QUANDO ELE ESTIVER LOGADO
     }
   }
+
+  componentDidMount(){
+    fetch('http://localhost:3001/')
+      .then(response => response.json())
+      .then(console.log)                
+  }
+
   render() {
     if(this.state.Route === "home"){
       return (
