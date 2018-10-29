@@ -15,13 +15,15 @@ export default class Dashboard extends Component {
   render() {
     return (
       <div>
-        <DashboardNavBar></DashboardNavBar>
-        <div className='col-lg-3 col-md-3'></div>
-        <div className='col-lg-6 col-md-6 teste'>
-          <GraficoMacros></GraficoMacros>
-          <GraficoRefeicoes></GraficoRefeicoes>
+        
+        <div className='container'>
+          <div className="">
+            <GraficoMacros></GraficoMacros>
+          </div>
+          <div className="espacamento">
+            <GraficoRefeicoes></GraficoRefeicoes>
+          </div>
         </div>
-        <div className='col-lg-3 col-md-3'></div>
       </div>
     )
   }

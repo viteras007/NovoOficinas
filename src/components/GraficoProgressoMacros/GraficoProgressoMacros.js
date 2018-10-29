@@ -19,15 +19,17 @@ export default class GraficoProgressoMacros extends Component {
 	render() {
         const { proteina, gordura, carboidrato } = this.state;
 		return (
-            <div className="">
+            <div >
                 <div className="content-section introduction">
                     <div className="feature-intro">
-                        <h1>Progresso de Macro Nutrientes</h1>
+                        <h1>Progresso de Diário</h1>
                     </div>
                 </div>
-                <p>Proteína</p><ProgressBar now={proteina} label={`${proteina}%`} />
-                <p>Gordura</p><ProgressBar now={gordura} label={`${gordura}%`} />
-                <p>Carboidrato</p><ProgressBar now={carboidrato} label={`${carboidrato}%`} />
+                <div>
+                    <p>Proteína</p><ProgressBar now={proteina} label={`${proteina}%`} />
+                    <p>Gordura</p><ProgressBar now={gordura} label={`${gordura}%`} />
+                    <p>Carboidrato</p><ProgressBar now={carboidrato} label={`${carboidrato}%`} />
+                </div>
             </div>
 		)
 	}

@@ -32,21 +32,33 @@ export default class Login extends Component {
           <Nav pullRight>
             <NavDropdown eventKey={1} title="Dieta" id="dieta-dropdown">
               <MenuItem eventKey={1.1}>
-                <Link to="/indicadorInst">Buscar Alimento</Link>
+                <Link to="/indicadorInst">Mostrar Alimento</Link>
               </MenuItem>
               <MenuItem eventKey={1.2}>
               <Link to="/indicadorAno">Alterar Dieta</Link> 
               </MenuItem>
             </NavDropdown>
-            <NavDropdown eventKey={2} title="Alimentos" id="alimentos-dropdown">
-              <MenuItem eventKey={2.1}>Adicionar</MenuItem>
-              <MenuItem eventKey={2.2}>remover</MenuItem>
-              <MenuItem eventKey={2.3}>alterar</MenuItem>
+            <NavDropdown eventKey={2} title="Cardápio" id="alimentos-dropdown">
+              <MenuItem eventKey={2.1}>
+                <Link to="/adicionaralimento">Adicionar novo Alimento</Link>
+              </MenuItem>
+              <MenuItem eventKey={2.2}>
+                <Link to="/removeralimento">Remover Alimento</Link>
+              </MenuItem>
+              <MenuItem eventKey={2.3}>
+                <Link to="/alterar">Alterar Alimento</Link>
+              </MenuItem>
             </NavDropdown>
             <NavDropdown eventKey={3} title="Usuário" id="usuario-dropdown">
-              <MenuItem eventKey={3.1}>Alterar Senha</MenuItem>
-              <MenuItem eventKey={3.2}>Alterar Nome</MenuItem>
-              <MenuItem eventKey={3.2}>Alterar Meta</MenuItem>
+              <MenuItem eventKey={3.1}>
+                <Link to="/alterarsenha">Alterar Senha</Link>
+              </MenuItem>
+              <MenuItem eventKey={3.2}>
+                <Link to="/alterarnome">Alterar Nome</Link>
+              </MenuItem>
+              <MenuItem eventKey={3.3}>
+                <Link to="/alterarmeta">Alterar Meta</Link>
+              </MenuItem>
             </NavDropdown>
             <NavItem className='logoutButton' eventKey={4}><Link to="/sobre">Sair</Link></NavItem>
           </Nav>

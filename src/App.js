@@ -5,15 +5,20 @@ import 'primeicons/primeicons.css';
 
 // Components
 import IndexNavBar from "../src/components/IndexNavBar/IndexNavBar";
+import DashboardNavbar from "../src/components/DashBoardNavBar/DashBoardNavBar";
 
-// Pages
+// Index Pages
 import PaginaInicial from "./pages/PaginaInicial/PaginaInicial";
 import Sobre from "./pages/Sobre/Sobre";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 
-import Dashbard from "./pages/Dashboard/Dashboard";
-
+// DashBoard Pages
+import AlterarSenha from "./pages/AlterarSenha/AlterarSenha"
+import DashBoardPage from "./pages/Dashboard/Dashboard";
+import AlterarNome from "./pages/AlterarNome/AlterarNome";
+import AlterarMeta from "./pages/AlterarMeta/AlterarMeta";
+import AdicionarAlimento from "./pages/AdicionarAlimento/AdicionarAlimento";
 
 
 
@@ -27,7 +32,7 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      Route: 'l'
+      Route: 'j'
     }
   }
   render() {
@@ -46,7 +51,12 @@ class App extends Component {
       return (
         <Router>
           <div>    
-            <Dashbard></Dashbard>                 
+            <DashboardNavbar></DashboardNavbar> 
+            <Route exact path="/" component={DashBoardPage}/> 
+            <Route path="/alterarsenha" component={AlterarSenha}/>
+            <Route path="/alterarnome" component={AlterarNome}/>
+            <Route path="/alterarmeta" component={AlterarMeta}/>
+            <Route path="/adicionaralimento" component={AdicionarAlimento}/>
           </div>
         </Router>
       );
