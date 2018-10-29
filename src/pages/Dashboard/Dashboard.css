@@ -1,0 +1,59 @@
+div#top{
+    margin-bottom: 60px;
+}
+
+.headerLogo {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.7em;
+}
+
+.navbar-inverse {
+    background-color: rgb(27, 115, 167);
+    border-color: rgb(27, 115, 167);
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+}
+
+li a {
+    color: white;
+}
+
+li a:hover {
+    color: white;
+}
+
+li.dropdown a {
+    color: rgb(27, 115, 167);
+    text-decoration: none;
+}
+
+li.dropdown  a:hover {
+    color: rgb(0, 34, 54);
+}
+
+.itensText {
+    font-family: 'Montserrat', sans-serif;
+}
+.navbar-inverse .navbar-toggle {
+    border-color: black;
+    border: 1px solid black;
+}
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+    color: #fff;
+    background-color: black;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.logoutButton{
+    background-color: red;
+}

@@ -12,8 +12,8 @@ import NavbarBrand from 'react-bootstrap/lib/NavbarBrand';
 import NavbarCollapse from 'react-bootstrap/lib/NavbarCollapse';
 import NavbarHeader from 'react-bootstrap/lib/NavbarHeader';
 
-import './ObservatorioMenu.css'
-export default class ObservatorioMenu extends Component {
+import '../../components/IndexNavBar/IndexNavBar.css';
+export default class IndexNavBar extends Component {
   render() {
     return (
       <div id="top">
@@ -28,6 +28,7 @@ export default class ObservatorioMenu extends Component {
             <Nav pullRight>
               <NavItem eventKey={1} href="/login">Login</NavItem>
               <NavItem eventKey={2} href="/register">Register</NavItem>
+
             </Nav>
           </NavbarCollapse>
         </Navbar>
