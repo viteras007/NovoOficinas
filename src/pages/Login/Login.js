@@ -12,6 +12,35 @@ import "../../cssPadrao/cssPadrao.css";
 
 
 export default class Login extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            signInEmail: '',
+            signInPassword: ''
+        }   
+        console.log(this.props.state);
+    }
+    
+    onEmailChange = (event) => {
+        this.setState({ signInEmail: event.target.value})
+    }
+    onPasswordChange = (event) => {
+        this.setState({ signInPassword: event.target.value})
+    }
+    onSubmitSignIn = () => {
+        fetch('http://localhost:3001/login', {
+            method: 'post',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                email: this.state.signInEmail,
+                password: this.state.signInPassword
+            })
+        }) 
+        // MUDAR A ROUTE EM APP JS PARA OUTRA COISA A NÃO SER HOME
+    }  
+    Teste = () => {
+        console.log('Email: ' + this.state.signInEmail +'Senha: ' + this.state.signInPassword);
+    }  
   render() {
     return (
         <div>
@@ -22,8 +51,11 @@ export default class Login extends Component {
                             Email
                         </Col>
                         <Col sm={10}>
-                        <FormControl type="email" placeholder="Email" />
-                        </Col>
+                        <FormControl 
+                            type="email" 
+                            placeholder="Email" 
+                            onChange={this.onEmailChange} />
+                        </Col>                        
                     </FormGroup>
 
                     <FormGroup controlId="formHorizontalPassword">
@@ -31,13 +63,19 @@ export default class Login extends Component {
                         Password
                         </Col>
                         <Col sm={10}>
-                        <FormControl type="password" placeholder="Password" />
+                        <FormControl 
+                            type="password" 
+                            placeholder="Password" 
+                            onChange={this.onPasswordChange}/>
                         </Col>
                     </FormGroup>
 
                     <FormGroup>
                         <Col smOffset={2} sm={10}>
-                        <Button type="submit">Logar</Button>
+                        <Button 
+                            type="submit" 
+                            onClick={this.onSubmitSignIn} >Logar
+                        </Button>
                         </Col>
                     </FormGroup>
                 </Form>
