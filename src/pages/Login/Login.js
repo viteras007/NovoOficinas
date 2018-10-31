@@ -40,10 +40,10 @@ export default class Login extends Component {
             .then(data => {
                 if (data === 'Success'){
                     console.log('LOGOU')
+                    //MUDAR A ROTA, PORQUE USUARIO LOGOU
                 }                
             })
         console.log(this.state)
-        //MUDAR A ROUTE EM APP JS PARA OUTRA COISA A NÃO SER HOME
     }   
   render() {
     return (
