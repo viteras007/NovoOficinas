@@ -16,14 +16,14 @@ export default class AlterarSenha extends Component {
         <div  className="container">
             <form>
                 <p className="h4 text-center mb-4">Alterar Senha</p>
-                <label htmlFor="defaultFormRegisterNameEx" className="grey-text">Digite a senha atual</label>
-                <input type="password" id="defaultFormRegisterNameEx" className="form-control" />
+                <label htmlFor="senhaAtual" className="grey-text">Digite a senha atual</label>
+                <input type="password" id="senhaAtual" className="form-control" />
                 <br />
-                <label htmlFor="defaultFormRegisterEmailEx" className="grey-text">Digite a nova senha</label>
-                <input type="text" id="defaultFormRegisterEmailEx" className="form-control" />
+                <label htmlFor="novaSenha" className="grey-text">Digite a nova senha</label>
+                <input type="text" id="novaSenha" className="form-control" />
                 <br />
-                <label htmlFor="defaultFormRegisterConfirmEx" className="grey-text">Digite novamente a nova senha</label>
-                <input type="text" id="defaultFormRegisterConfirmEx" className="form-control" />
+                <label htmlFor="confirmacaoSenha" className="grey-text">Digite novamente a nova senha</label>
+                <input type="text" id="confirmacaoSenha" className="form-control" />
                 <br />
                 <div className="text-center mt-5 ">
                     <button className="btn btn-unique botaoAlterar" type="submit">Confirmar Alteração</button>

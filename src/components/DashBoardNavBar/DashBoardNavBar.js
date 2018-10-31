@@ -32,21 +32,15 @@ export default class Login extends Component {
           <Nav pullRight>
             <NavDropdown eventKey={1} title="Dieta" id="dieta-dropdown">
               <MenuItem eventKey={1.1}>
-                <Link to="/indicadorInst">Mostrar Alimento</Link>
-              </MenuItem>
-              <MenuItem eventKey={1.2}>
               <Link to="/indicadorAno">Alterar Dieta</Link> 
               </MenuItem>
             </NavDropdown>
             <NavDropdown eventKey={2} title="Cardápio" id="alimentos-dropdown">
               <MenuItem eventKey={2.1}>
-                <Link to="/adicionaralimento">Adicionar novo Alimento</Link>
+                <Link to="/removeralimento">Ver Alimentos</Link>
               </MenuItem>
               <MenuItem eventKey={2.2}>
-                <Link to="/removeralimento">Remover Alimento</Link>
-              </MenuItem>
-              <MenuItem eventKey={2.3}>
-                <Link to="/alterar">Alterar Alimento</Link>
+                <Link to="/adicionaralimento">Adicionar novo Alimento</Link>
               </MenuItem>
             </NavDropdown>
             <NavDropdown eventKey={3} title="Usuário" id="usuario-dropdown">
