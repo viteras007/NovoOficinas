@@ -22,9 +22,6 @@ export default class AlterarNome extends Component {
                     <label htmlFor="novoNome" className="grey-text">Digite o novo nome</label>
                     <input type="text" id="novoNome" className="form-control" />
                     <br />
-                    <label htmlFor="confirmacaoNome" className="grey-text">Digite novamente o novo nome</label>
-                    <input type="text" id="confirmacaoNome" className="form-control" />
-                    <br />
                     <div className="text-center mt-5 ">
                         <button className="btn btn-unique botaoAlterar" type="submit">Confirmar Alteração</button>
                     </div>
