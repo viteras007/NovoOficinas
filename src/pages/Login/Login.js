@@ -18,7 +18,7 @@ export default class Login extends Component {
             signInEmail: '',
             signInPassword: ''
         }   
-        console.log(this.props.state);
+
     }
     
     onEmailChange = (event) => {
@@ -28,19 +28,23 @@ export default class Login extends Component {
         this.setState({ signInPassword: event.target.value})
     }
     onSubmitSignIn = () => {
-        fetch('http://localhost:3001/login', {
+        fetch('http://localhost:3001/login',{
             method: 'post',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
                 email: this.state.signInEmail,
                 password: this.state.signInPassword
             })
-        }) 
-        // MUDAR A ROUTE EM APP JS PARA OUTRA COISA A NÃO SER HOME
-    }  
-    Teste = () => {
-        console.log('Email: ' + this.state.signInEmail +'Senha: ' + this.state.signInPassword);
-    }  
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data === 'Success'){
+                    console.log('LOGOU')
+                }                
+            })
+        console.log(this.state)
+        //MUDAR A ROUTE EM APP JS PARA OUTRA COISA A NÃO SER HOME
+    }   
   render() {
     return (
         <div>
@@ -70,11 +74,13 @@ export default class Login extends Component {
                         </Col>
                     </FormGroup>
 
-                    <FormGroup>
+                    <FormGroup
+                    type="submit"
+                    onClick={this.onSubmitSignIn}>
                         <Col smOffset={2} sm={10}>
                         <Button 
-                            type="submit" 
-                            onClick={this.onSubmitSignIn} >Logar
+                             
+                             >Logar
                         </Button>
                         </Col>
                     </FormGroup>
