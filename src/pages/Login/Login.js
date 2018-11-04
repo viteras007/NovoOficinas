@@ -37,13 +37,17 @@ export default class Login extends Component {
             })
         })
             .then(response => response.json())
-            .then(data => {
-                if (data === 'Success'){
-                    console.log('LOGOU')
-                    //MUDAR A ROTA, PORQUE USUARIO LOGOUUU
-                }                
-            })
-        console.log(this.state)
+            .then(user => {
+                if(user.id){
+                    console.log(user.name + ' LOGOU');
+                    //ROTA PARA ELE LOGADO
+                    // POSSIVEL USAR TODOS DADOS DO USUARIO                    
+                }
+                else{
+                    console.log('ERROR');
+                    // MENSAGEM DE ERRO
+                }
+            })            
     }   
   render() {
     return (
