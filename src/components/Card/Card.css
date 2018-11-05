@@ -1,4 +1,12 @@
-.testezao{
+.cardstyle{
     box-shadow: 6px 6px 9px -5px #969696;
     text-align: center;
+    border: solid 1px;
+    margin-bottom: 5px;
+}
+.bgcard{
+    background-color: white;
+}
+.cardbuttons{
+    margin-bottom: 5px;
 }

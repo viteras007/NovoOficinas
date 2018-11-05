@@ -1,29 +1,6 @@
-@font-face {
-    font-family: 'SEGA LOGO FONT';
-    font-style: normal;
-    font-weight: normal;
-    
-    /* Esse e o import principal.. que contem o css de onde estava importando porém esta dando erro
-    src: local('SEGA LOGO FONT'), url('SEGA.woff') format('woff');
-    */
-}
-    
-h1{
-    font-family: 'SEGA LOGO FONT';
-    font-weight: 200;
-    color: #0d83b9;
-}
-
 .centralizar{
     text-align: center;
     padding-bottom: 1.5%;
 }
 
-.containercss{
-    background-color: #ececec;
 
-}
-
-.fundobusca{
-    background-color: white;
-}

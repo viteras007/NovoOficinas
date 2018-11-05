@@ -41,15 +41,13 @@ export default class BuscarAlimento extends Component {
 			return <h1 className='tc'>Loading</h1>
 		} else { 
 			return(
-			<div className='tc container containercss'>
+			<div className='tc container'>
 				<div className='centralizar'>
 					<h1 className='f2'>Alimentos</h1>
 					<SearchBox searchChange={this.onSearchChange}/>
 				</div>
-				<div className='fundobusca'>
-					<Scroll>
+				<div>
 						<CardList alimentos={alimentosBuscados}/>
-					</Scroll>
 				</div>
 			</div>
 			);

@@ -39,7 +39,7 @@ export default class AlterarMeta extends Component {
                     <RadioButton value="ganharpeso" name="proximameta" onChange={(e) => this.setState({valorProximaMeta: e.value})} checked={this.state.valorProximaMeta === 'ganharpeso'} /> Ganhar Peso
                 </Panel>
                 <div className="text-center mt-5 ">
-                        <button className="btn btn-unique botaoAlterar" type="submit" onClick={() => {
+                        <button className="espacamento btn btn-unique botaoAlterar" type="submit" onClick={() => {
                         alert("Alteração feita com sucesso!") }}>Confirmar Alteração</button>
                 </div>
             </form>

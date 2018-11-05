@@ -1,4 +1,6 @@
 import React from 'react';
+import {Button} from 'primereact/button';
+
 
 //CSS
 import '../../components/Card/Card.css'
@@ -8,12 +10,18 @@ import '../../components/Card/Card.css'
 
 const Card = ({ name, email, id } ) => {	
 	return (
-		<div className='col-lg-4 col-md-4 col-sm-12 testezao'>
+		<div className='col-lg-4 col-md-6 col-sm-12 cardstyle'>
 			<div className='bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5'>
 				<img alt='robots' src={`https://robohash.org/${ id }?200x200`}/>		
 				<div>
 					<h2> { name } </h2>
 					<p> { email }</p>
+					<div className='cardbuttons'>
+						<Button className="p-button-raised p-button-rounded p-button-success " label="Add na refeiçao" icon="pi pi-check" />
+						<Button className="p-button-raised p-button-rounded" label="Editar" />
+						<Button className="p-button-raised p-button-rounded p-button-danger " label="Excluir" />
+					</div>
+					
 				</div>
 			</div>
 		</div>
