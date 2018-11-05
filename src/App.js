@@ -19,6 +19,7 @@ import DashBoardPage from "./pages/Dashboard/Dashboard";
 import AlterarNome from "./pages/AlterarNome/AlterarNome";
 import AlterarMeta from "./pages/AlterarMeta/AlterarMeta";
 import AdicionarAlimento from "./pages/AdicionarAlimento/AdicionarAlimento";
+import BuscarALimento from "./pages/BuscarAlimento/BuscarAlimento";
 
 
 
@@ -32,10 +33,7 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-
-
-
-      Route: 'home'
+      Rota: 'a'
       // ADD OS DADOS DO USUARIO PARA RECEBER DA PAGINA LOGIN QUANDO ELE ESTIVER LOGADO
 
     }
@@ -47,8 +45,13 @@ class App extends Component {
       .then(console.log)                
   }
 
+  // mais ou menos isso para fazer mudar a rota
+  handleLanguage = (novarota) => {
+    this.setState({Rota: novarota});
+  }
+
   render() {
-    if(this.state.Route === "home"){
+    if(this.state.Rota === "home"){
       return (
         <Router>
           <div>
@@ -69,6 +72,7 @@ class App extends Component {
             <Route path="/alterarnome" component={AlterarNome}/>
             <Route path="/alterarmeta" component={AlterarMeta}/>
             <Route path="/adicionaralimento" component={AdicionarAlimento}/>
+            <Route path="/buscaralimento" component={BuscarALimento}/>
           </div>
         </Router>
       );

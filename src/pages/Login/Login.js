@@ -10,7 +10,6 @@ import FormControl from 'react-bootstrap/lib/FormControl';
 // CSS
 import "../../cssPadrao/cssPadrao.css";
 
-
 export default class Login extends Component {
     constructor(props){
         super(props);
@@ -40,8 +39,8 @@ export default class Login extends Component {
             .then(user => {
                 if(user.id){
                     console.log(user.name + ' LOGOU');
-                    //ROTA PARA ELE LOGADO
-                    // POSSIVEL USAR TODOS DADOS DO USUARIO                    
+                    // ROTA PARA ELE LOGADO
+                    // POSSIVEL USAR TODOS DADOS DO USUARIO                
                 }
                 else{
                     console.log('ERROR');
@@ -82,10 +81,7 @@ export default class Login extends Component {
                     type="submit"
                     onClick={this.onSubmitSignIn}>
                         <Col smOffset={2} sm={10}>
-                        <Button 
-                             
-                             >Logar
-                        </Button>
+                        <Button>Logar</Button>
                         </Col>
                     </FormGroup>
                 </Form>

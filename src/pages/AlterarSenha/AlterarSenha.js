@@ -26,7 +26,8 @@ export default class AlterarSenha extends Component {
                 <input type="text" id="confirmacaoSenha" className="form-control" />
                 <br />
                 <div className="text-center mt-5 ">
-                    <button className="btn btn-unique botaoAlterar" type="submit">Confirmar Alteração</button>
+                        <button className="btn btn-unique botaoAlterar" type="submit" onClick={() => {
+                        alert("Alteração feita com sucesso!") }}>Confirmar Alteração</button>
                 </div>
                 <br />
             </form>

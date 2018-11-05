@@ -32,7 +32,8 @@ export default class AdicionarAlimento extends Component {
                     <input type="text" id="linkImg" className="form-control" />
                     <br />
                     <div className="text-center mt-5 ">
-                        <button className="btn btn-unique botaoAlterar" type="submit">AdicionarAlimento</button>
+                        <button className="btn btn-unique botaoAlterar" type="submit" onClick={() => {
+                        alert("Alimento adicionado com sucesso!") }}>Confirmar Alteração</button>
                     </div>
                     <br />
                 </form>

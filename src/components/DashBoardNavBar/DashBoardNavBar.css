@@ -1,0 +1,73 @@
+div#top{
+    margin-bottom: 60px;
+}
+
+.dropdown-menu{
+    background-color:white;
+    box-shadow: 0 6px 12px rgb(107, 98, 98);
+}
+
+.headerLogo {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.7em;
+}
+
+.navbar-inverse {
+    background-color: rgb(27, 115, 167);
+    border-color: rgb(27, 115, 167);
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+}
+
+li a {
+    color: white;
+}
+
+li a:hover {
+    color: white;
+}
+
+li.dropdown a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-color: rgb(27, 115, 167);
+}
+
+li.dropdown  a:hover {
+    color: rgb(0, 34, 54);
+}
+
+.itensText {
+    font-family: 'Montserrat', sans-serif;
+}
+.navbar-inverse .navbar-toggle {
+    border-color: black;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    background-color: #133b52;
+}
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+    color: #fff;
+    background-color: black;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.logoutButton{
+    background-color: red;
+}
+
+.espacamento{
+    margin-top: 15%;
+}

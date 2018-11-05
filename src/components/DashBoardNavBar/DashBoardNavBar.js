@@ -37,7 +37,7 @@ export default class Login extends Component {
             </NavDropdown>
             <NavDropdown eventKey={2} title="Cardápio" id="alimentos-dropdown">
               <MenuItem eventKey={2.1}>
-                <Link to="/removeralimento">Ver Alimentos</Link>
+                <Link to="/buscaralimento">Buscar Alimentos</Link>
               </MenuItem>
               <MenuItem eventKey={2.2}>
                 <Link to="/adicionaralimento">Adicionar novo Alimento</Link>
