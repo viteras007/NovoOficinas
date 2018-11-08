@@ -7,7 +7,7 @@ import GraficoMacros from "../../components/GraficoProgressoMacros/GraficoProgre
 import GraficoRefeicoes from "../../components/GraficoRefeicoes/GraficoRefeicoes";
 
 //CSS
-import '../../pages/Dashboard/DashBoard.css';
+import '../../pages/Dashboard/Dashboard.css';
 
 
 export default class Dashboard extends Component {
