@@ -31,27 +31,73 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
   constructor(){
+   // sessionStorage.setItem('logado', false)
     super();
+    sessionStorage.setItem('logado', false)
     this.state = {
-      Rota: 'a'
+      logado: false
       // ADD OS DADOS DO USUARIO PARA RECEBER DA PAGINA LOGIN QUANDO ELE ESTIVER LOGADO
-
     }
+    console.log(this.state.logado);
   }
 
+  
+  
+  
+  funcaoteste = (logou) =>{
+    
+      // nessa linha ele esta alterando o valor.. so que nao esta renderizando denovo..
+      //this.state.logado = logou;
+
+      // nessa linha ele não esta nem alterando o valor
+      // this.setState.logado = logou;
+      
+      this.setState({
+        logado: logou
+      });
+      console.log(this.state.logado);
+  }
+  
   componentDidMount(){
     fetch('http://localhost:3001/')
       .then(response => response.json())
       .then(console.log)                
   }
 
-  // mais ou menos isso para fazer mudar a rota
-  handleLanguage = (novarota) => {
-    this.setState({Rota: novarota});
-  }
+
 
   render() {
-    if(this.state.Rota === "home"){
+    if (this.state.logado === false){
+      return (
+        <Router>
+          <div>
+            <IndexNavBar></IndexNavBar>                    
+            <Route exact path="/" component={PaginaInicial}/>
+            {/* <Route path="/login" component={Login}/> */}
+            <Route path="/login" render={(props) => <Login {...props} logar={this.funcaoteste} />}/>
+            <Route path="/register" component={Register}/>
+          </div>
+        </Router>
+      );
+
+    }else{
+      return (
+        <Router>
+          <div>    
+            <DashboardNavbar></DashboardNavbar> 
+            <Route exact path="/" component={DashBoardPage}/> 
+            <Route path="/alterarsenha" component={AlterarSenha}/>
+            <Route path="/alterarnome" component={AlterarNome}/>
+            <Route path="/alterarmeta" component={AlterarMeta}/>
+            <Route path="/adicionaralimento" component={AdicionarAlimento}/>
+            <Route path="/buscaralimento" component={BuscarALimento}/>
+          </div>
+        </Router>
+      );
+    }
+
+    /*
+    if(this.state.Login === false){
       return (
         <Router>
           <div>
@@ -77,6 +123,9 @@ class App extends Component {
         </Router>
       );
     }
+    */
+
+
   }
 }
 

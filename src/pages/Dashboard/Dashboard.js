@@ -10,6 +10,9 @@ import GraficoRefeicoes from "../../components/GraficoRefeicoes/GraficoRefeicoes
 import '../../pages/Dashboard/DashBoard.css';
 
 
+// para pegar os dados
+//console.log(JSON.parse(sessionStorage.getItem('user')));
+
 export default class Dashboard extends Component {
 
   render() {

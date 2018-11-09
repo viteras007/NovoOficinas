@@ -24,7 +24,9 @@ export default class Login extends Component {
       <Navbar inverse collapseOnSelect fixedTop>
         <NavbarHeader>
           <NavbarBrand>
-            <Link to="/" className="headerLogo">Username</Link>
+            <Link to="/" className="headerLogo">aa</Link>
+            {/* para pegar o nome do cara */}
+            { /* {JSON.parse(sessionStorage.getItem('user').name)} */}
           </NavbarBrand>
           <NavbarToggle />
         </NavbarHeader>

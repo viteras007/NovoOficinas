@@ -26,18 +26,16 @@ export default class AlterarMeta extends Component {
                 <p className="h4 text-center mb-4">Alterar Meta</p>
                 <label htmlFor="defaultFormRegisterNameEx" className="grey-text">Meta Atual</label>
                 <input type="text" id="MetaAtual"  className="form-control" value="eee" readOnly />
-                <Panel header="Atingiu sua meta atual?" className="espacamento">
-                    <RadioButton value="sim" name="atingiumeta" onChange={(e) => this.setState({valorMetaAtual: e.value})} checked={this.state.valorMetaAtual === 'sim'} /> Sim
-                    <br />
-                    <RadioButton value="nao" name="atingiumeta" onChange={(e) => this.setState({valorMetaAtual: e.value})} checked={this.state.valorMetaAtual === 'nao'} /> Não
+                <Panel header="Qual seu Peso Atual em Kg?" className="espacamento">
+                    <input type="text" id="PesoAtual"  className="form-control" placeholder="Peso Atual" />
                 </Panel>
-                <Panel header="Qual sua próxima meta?" className="espacamento">
-                    <RadioButton value="perderpeso" name="proximameta" onChange={(e) => this.setState({valorProximaMeta: e.value})} checked={this.state.valorProximaMeta === 'perderpeso'} /> Perder Peso
-                    <br />
-                    <RadioButton value="manterpeso" name="proximameta" onChange={(e) => this.setState({valorProximaMeta: e.value})} checked={this.state.valorProximaMeta === 'manterpeso'} /> Manter Peso
-                    <br />
-                    <RadioButton value="ganharpeso" name="proximameta" onChange={(e) => this.setState({valorProximaMeta: e.value})} checked={this.state.valorProximaMeta === 'ganharpeso'} /> Ganhar Peso
+                <Panel header="Qual sua Altura Atual em cm?" className="espacamento">
+                    <input type="text" id="AlturaAtual"  className="form-control" placeholder="Altura Atual"  />
                 </Panel>
+                <Panel header="Meta a atingir em Kg" className="espacamento">
+                    <input type="text" id="AlturaAtual"  className="form-control" placeholder="Altura Atual"  />
+                </Panel>
+                
                 <div className="text-center mt-5 ">
                         <button className="espacamento btn btn-unique botaoAlterar" type="submit" onClick={() => {
                         alert("Alteração feita com sucesso!") }}>Confirmar Alteração</button>

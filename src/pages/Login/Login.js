@@ -15,10 +15,14 @@ export default class Login extends Component {
         super(props);
         this.state = {
             signInEmail: '',
-            signInPassword: ''
+            signInPassword: '',
+            
         }   
 
     }
+
+
+
     
     onEmailChange = (event) => {
         this.setState({ signInEmail: event.target.value})
@@ -37,13 +41,17 @@ export default class Login extends Component {
         })
             .then(response => response.json())
             .then(user => {
-                if(user.id){
+                if(user.Id){
                     console.log(user.name + ' LOGOU');
+                    sessionStorage.setItem('user', JSON.stringify(user));
+                    this.props.logar(true);
+                    //this.funcaoteste(true);
                     // ROTA PARA ELE LOGADO
                     // POSSIVEL USAR TODOS DADOS DO USUARIO                
                 }
                 else{
                     console.log('ERROR');
+                    sessionStorage.setItem('logado', false);
                     // MENSAGEM DE ERRO
                 }
             })            
