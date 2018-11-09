@@ -44,14 +44,14 @@ class App extends Component {
   
   
   
-  funcaoteste = (logou) =>{
+  funcaologar = (logou) =>{
     
       // nessa linha ele esta alterando o valor.. so que nao esta renderizando denovo..
       //this.state.logado = logou;
 
       // nessa linha ele não esta nem alterando o valor
       // this.setState.logado = logou;
-      
+
       this.setState({
         logado: logou
       });
@@ -74,7 +74,7 @@ class App extends Component {
             <IndexNavBar></IndexNavBar>                    
             <Route exact path="/" component={PaginaInicial}/>
             {/* <Route path="/login" component={Login}/> */}
-            <Route path="/login" render={(props) => <Login {...props} logar={this.funcaoteste} />}/>
+            <Route path="/login" render={(props) => <Login {...props} logar={this.funcaologar} />}/>
             <Route path="/register" component={Register}/>
           </div>
         </Router>
@@ -95,36 +95,6 @@ class App extends Component {
         </Router>
       );
     }
-
-    /*
-    if(this.state.Login === false){
-      return (
-        <Router>
-          <div>
-            <IndexNavBar></IndexNavBar>                    
-            <Route exact path="/" component={PaginaInicial}/>
-            <Route path="/login" component={Login}/>
-            <Route path="/register" component={Register}/>
-          </div>
-        </Router>
-      );
-    }else{
-      return (
-        <Router>
-          <div>    
-            <DashboardNavbar></DashboardNavbar> 
-            <Route exact path="/" component={DashBoardPage}/> 
-            <Route path="/alterarsenha" component={AlterarSenha}/>
-            <Route path="/alterarnome" component={AlterarNome}/>
-            <Route path="/alterarmeta" component={AlterarMeta}/>
-            <Route path="/adicionaralimento" component={AdicionarAlimento}/>
-            <Route path="/buscaralimento" component={BuscarALimento}/>
-          </div>
-        </Router>
-      );
-    }
-    */
-
 
   }
 }
