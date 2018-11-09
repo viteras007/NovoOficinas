@@ -22,9 +22,9 @@ export default class BuscarAlimento extends Component {
 
     componentDidMount() {
         // colocar aqui a busca no banco de dados de onde vai consumir os dados
-		fetch('http://jsonplaceholder.typicode.com/users')
+		fetch('http://localhost:3001/allfood')
 			.then(response => response.json())
-			.then(users => this.setState({ alimentos: users }));		
+			.then(food => this.setState({ alimentos: food }));		
 	}
 
 	onSearchChange = (event) => {
