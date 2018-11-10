@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 
 // CSS
-import "../../cssPadrao/cssPadrao.css";
+import '../../pages/Register/Register.css';
 
 export default class Sobre extends Component {
     constructor(props){
@@ -48,7 +48,7 @@ export default class Sobre extends Component {
             <div>
                 <div className="container-fluid container-login">
                     <form>
-                        <p className="h4 text-center mb-4">Register</p>
+                        <p className="h4 text-center regTitle mb-4">Cadastrar</p>
                         <label htmlFor="defaultFormRegisterNameEx" className="grey-text">Your name</label>
                         <input 
                             type="text" 

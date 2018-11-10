@@ -13,6 +13,8 @@ import NavbarCollapse from 'react-bootstrap/lib/NavbarCollapse';
 import NavbarHeader from 'react-bootstrap/lib/NavbarHeader';
 
 import '../../components/IndexNavBar/IndexNavBar.css';
+
+
 export default class IndexNavBar extends Component {
   render() {
     return (
@@ -20,14 +22,14 @@ export default class IndexNavBar extends Component {
         <Navbar inverse collapseOnSelect fixedTop>
           <NavbarHeader>
             <NavbarBrand>
-              <a href="/">YoungLife</a>
+              <a className="sitelogo" href="/">YoungLife</a>
             </NavbarBrand>
             <NavbarToggle />
           </NavbarHeader>
           <NavbarCollapse>
-            <Nav pullRight>
+            <Nav className="navbuttons" pullRight>
               <NavItem eventKey={1} href="/login">Login</NavItem>
-              <NavItem eventKey={2} href="/register">Register</NavItem>
+              <NavItem eventKey={2} href="/register">Cadastrar</NavItem>
 
             </Nav>
           </NavbarCollapse>

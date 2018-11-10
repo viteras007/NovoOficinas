@@ -1,0 +1,128 @@
+.container1{
+    background-color: #eaeaea;
+    padding-bottom: 23px;
+  
+}
+
+.container2{ 
+    background-color: white;
+    padding-bottom: 23px;
+}
+
+.container1{
+    background-color: #e4e6e5;
+    padding-bottom: 23px;
+}
+
+.container3{
+    background-color: #185480;
+    padding-bottom: 23px;
+}
+
+.bodyindex{
+    background-color: white;
+    padding-bottom: 15px;
+    
+    margin-top: -9px;
+}
+
+.subcontainer{
+    padding-bottom: 40px;
+}
+
+.containerimage{
+    border-style: groove;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    margin-left: 5px;
+}
+
+
+
+/* Painel */
+.p-panel-titlebar{
+    font-family: 'Courgette', cursive;
+    font-size: 17px;
+}
+body .p-panel .p-panel-titlebar {
+    border: 1px solid #c8c8c8;
+    padding: 0.571em 1em;
+    background-color: #185480;
+    color: #fffefe;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    
+}
+
+.containertexto{
+    padding-right: 1em;
+}
+
+
+/* logo */
+@media screen and (max-width: 480px) {
+    .logo{
+        font-size: 130px;
+        color: black;
+    }
+}
+
+.logo-small {
+    color: black;
+    font-size: 100px;
+    transition: all 0.5s;
+}
+
+.logo-small:hover{
+    transform: scale(1.2);
+}
+
+
+/* final dos logos*/
+
+
+
+.container-fluid{
+    text-align: center;
+}
+
+h4{
+    font-size: 38px;
+    color: black;
+    text-align: center;
+    padding-bottom: 23px;;
+    padding-top: 15px;
+    font-family: 'Poiret One', cursive;
+}
+
+h5{
+    font-size: 23px;
+    color: white;
+    font-family: 'Courgette', cursive;
+}
+
+p{
+    font-size: 17px;
+    color: #cccccc;
+    font-family: 'KoHo', sans-serif;
+}
+
+.titlecontainer{
+    color: white;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    z-index: 0;
+    position: static;
+}
+
+.imgborder{
+    border-style: double;
+    border-width: 5px;
+}
+
+  

@@ -22,6 +22,10 @@ import AdicionarAlimento from "./pages/AdicionarAlimento/AdicionarAlimento";
 import BuscarALimento from "./pages/BuscarAlimento/BuscarAlimento";
 
 
+//CSS
+import "./App.css";
+
+
 
 // React
 import React, { Component } from 'react';
@@ -78,6 +82,7 @@ class App extends Component {
             <Route path="/register" component={Register}/>
           </div>
         </Router>
+        
       );
 
     }else{

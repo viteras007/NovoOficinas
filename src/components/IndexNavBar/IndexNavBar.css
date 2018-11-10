@@ -23,3 +23,14 @@ body a {
 body a:hover {
     color: #00510F;
 }
+
+.sitelogo{
+    font-family: 'Courgette', cursive;
+    font-size: 25px;
+
+}
+
+.navbuttons{
+    font-family: 'Poiret One', cursive;
+    font-size: 18px;
+}
