@@ -32,28 +32,23 @@ export default class Login extends Component {
         </NavbarHeader>
         <NavbarCollapse className="itensText">
           <Nav pullRight>
-            <NavDropdown eventKey={1} title="Dieta" id="dieta-dropdown">
+            <NavDropdown eventKey={1} title="Cardápio" id="alimentos-dropdown">
               <MenuItem eventKey={1.1}>
-              <Link to="/indicadorAno">Alterar Dieta</Link> 
-              </MenuItem>
-            </NavDropdown>
-            <NavDropdown eventKey={2} title="Cardápio" id="alimentos-dropdown">
-              <MenuItem eventKey={2.1}>
                 <Link to="/buscaralimento">Buscar Alimentos</Link>
               </MenuItem>
-              <MenuItem eventKey={2.2}>
+              <MenuItem eventKey={1.2}>
                 <Link to="/adicionaralimento">Adicionar novo Alimento</Link>
               </MenuItem>
             </NavDropdown>
-            <NavDropdown eventKey={3} title="Usuário" id="usuario-dropdown">
-              <MenuItem eventKey={3.1}>
+            <NavDropdown eventKey={2} title="Usuário" id="usuario-dropdown">
+              <MenuItem eventKey={2.1}>
                 <Link to="/alterarsenha">Alterar Senha</Link>
               </MenuItem>
-              <MenuItem eventKey={3.2}>
+              <MenuItem eventKey={2.2}>
                 <Link to="/alterarmeta">Alterar Meta</Link>
               </MenuItem>
             </NavDropdown>
-            <NavItem className='logoutButton' eventKey={4}><Link to="/sobre">Sair</Link></NavItem>
+            <NavItem className='logoutButton' eventKey={3}><Link to="/sobre">Sair</Link></NavItem>
           </Nav>
         </NavbarCollapse>
       </Navbar>
