@@ -18,8 +18,6 @@ const Card = ({ name, link, id } ) => {
 					<p> {  }</p>
 					<div className='cardbuttons'>
 						<Button className="p-button-raised p-button-rounded p-button-success " label="Add na refeiçao" icon="pi pi-check" />
-						<Button className="p-button-raised p-button-rounded" label="Editar" />
-						<Button className="p-button-raised p-button-rounded p-button-danger " label="Excluir" />
 					</div>
 					
 				</div>

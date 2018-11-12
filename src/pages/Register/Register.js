@@ -1,20 +1,32 @@
 // React
 import React, { Component } from 'react'
 
+//Components
+
+import {RadioButton} from 'primereact/radiobutton';
+
 // CSS
 import '../../pages/Register/Register.css';
 
 export default class Sobre extends Component {
     constructor(props) {
         super(props);
+        
         this.state = {
             email: '',
             password: '',
             name: '',
             sexo: ''
+<<<<<<< HEAD
         }
 
+=======
+            
+        }   
+>>>>>>> 6cb9f6e68ffa7e39f8d503a3d2802f177194fb3e
     }
+  
+
     onNameChange = (event) => {
         this.setState({ name: event.target.value })
     }
@@ -49,9 +61,10 @@ export default class Sobre extends Component {
     }
 
     render() {
+        
         return (
             <div>
-                <div className="container-fluid container-login">
+                <div className="container-fluid container-login conteudo">
                     <form>
                         <p className="h4 text-center regTitle mb-4">Cadastrar</p>
                         <label htmlFor="defaultFormRegisterNameEx" className="grey-text">Your name</label>
@@ -76,7 +89,18 @@ export default class Sobre extends Component {
                             id="defaultFormRegisterPasswordEx"
                             className="form-control"
                             onChange={this.onPasswordChange}
+<<<<<<< HEAD
                         />
+=======
+                            />
+                        <br />
+                        <div>
+                            <label>Sexo:</label>
+                            <br />
+                            <RadioButton value="F" name="feminino" onChange={(e) => this.setState({sexo: e.value})} checked={this.state.sexo === 'F'} /> <label className="labelespacamento">Feminino</label>
+                            <RadioButton value="M" name="masculino" onChange={(e) => this.setState({sexo: e.value})} checked={this.state.sexo === 'M'} /> <label>Masculino</label>                                  
+                        </div>
+>>>>>>> 6cb9f6e68ffa7e39f8d503a3d2802f177194fb3e
                         <div className="text-center mt-5 recuoBotao">
                             <button
                                 className="btn btn-unique buttonRegister"

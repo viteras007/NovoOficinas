@@ -43,6 +43,7 @@ export default class Login extends Component {
                     sessionStorage.setItem('logado', true);
 
                     this.props.logar(sessionStorage.getItem('logado'));
+                    
                     //this.funcaoteste(true);
                     // ROTA PARA ELE LOGADO
                     // POSSIVEL USAR TODOS DADOS DO USUARIO                

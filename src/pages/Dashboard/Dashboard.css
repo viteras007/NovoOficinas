@@ -10,3 +10,20 @@
     border-radius: 5px;
     box-shadow: 0px 2px 11px 3px #b9b7b7;
 }
+
+
+.titulo{
+    font-family: 'Poiret One', cursive;
+    text-align: center;
+    color: black;
+}
+
+.subtitulo{
+    font-size: 14px;
+    color: black;
+    font-family: 'Courgette', cursive;
+}
+
+.p-progressbar-determinate{
+
+}
