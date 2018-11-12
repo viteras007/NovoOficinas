@@ -16,7 +16,8 @@ export default class AdicionarAlimento extends Component {
             Vcaloria: '10',
             Vproteina: '',
             Vcarboidrato: '',
-            Vgordura: ''
+            Vgordura: '',
+            Vimglink: ''
         }  
     }
     onSubmitFood = () => {                
@@ -28,7 +29,8 @@ export default class AdicionarAlimento extends Component {
                 caloria: this.state.Vcaloria,
                 proteina: this.state.Vproteina,
                 carboidrato: this.state.Vcarboidrato,
-                gordura: this.state.Vgordura
+                gordura: this.state.Vgordura,
+                imglink: this.state.Vimglink
             })
         })
         .then(response => response.json())
@@ -77,7 +79,8 @@ export default class AdicionarAlimento extends Component {
                     <input 
                         type="text" 
                         id="linkImg" 
-                        className="form-control"                         
+                        className="form-control" 
+                        onChange={(event) => {this.setState({Vimglink: event.target.value})}}                      
                     />
                     <br />
                     <div className="text-center mt-5 ">
