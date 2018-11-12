@@ -21,9 +21,9 @@ export default class AlterarMeta extends Component {
   render() {
     return (
         <div>
-        <div  className="container">
+        <div  className="conteudo container containerprincipal">
             <form>
-                <p className="h4 text-center mb-4">Alterar Meta</p>
+                <p className="h4 text-center mb-4 titulo">Alterar Meta</p>
                 <label htmlFor="defaultFormRegisterNameEx" className="grey-text">Meta Atual</label>
                 <input type="text" id="MetaAtual"  className="form-control" value="eee" readOnly />
                 <Panel header="Qual seu Peso Atual em Kg?" className="espacamento">

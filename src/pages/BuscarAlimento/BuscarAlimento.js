@@ -47,7 +47,7 @@ export default class BuscarAlimento extends Component {
 					<SearchBox searchChange={this.onSearchChange}/>
 				</div>
 				<div>
-						<CardList alimentos={alimentosBuscados}/>
+					<CardList alimentos={alimentosBuscados}/>
 				</div>
 			</div>
 			);

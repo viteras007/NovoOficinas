@@ -43,9 +43,9 @@ export default class AlterarSenha extends Component {
   render() {
     return (
         <div>
-        <div  className="container">
+        <div  className="conteudo container containerprincipal">
             <form>
-                <p className="h4 text-center mb-4">Alterar Senha</p>
+                <p className="h4 text-center mb-4 titulo">Alterar Senha</p>
                 <label htmlFor="senhaAtual" className="grey-text">Digite a senha atual</label>
                 <input 
                     type="password" 
