@@ -20,10 +20,10 @@ export default class AlterarSenha extends Component {
         console.log(usuario.Id)
     }
    
-    onSubmitPass = () => {
-        alert('entrou');        
+    onSubmitPass = () => {               
 
     }
+
     render() {
         return (
             <div>
@@ -59,6 +59,7 @@ export default class AlterarSenha extends Component {
                                 className="btn btn-unique botaoAlterar"
                                 type="submit"
                                 onChange={this.onSubmitPass}
+
                             >
                                 Confirmar Alteração
                         </button>

@@ -20,9 +20,6 @@ export default class Login extends Component {
         }   
 
     }
-
-
-
     
     onEmailChange = (event) => {
         this.setState({ signInEmail: event.target.value})

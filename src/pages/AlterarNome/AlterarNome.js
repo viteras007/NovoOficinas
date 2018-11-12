@@ -15,9 +15,9 @@ export default class AlterarNome extends Component {
   render() {
     return (
         <div>
-            <div className="container">
+            <div className="conteudo container containerprincipal">
                 <form>
-                    <p className="h4 text-center mb-4">Alterar Nome de Usuário</p>
+                    <p className="h4 text-center mb-4 titulo">Alterar Nome de Usuário</p>
                     <label htmlFor="nomeAtual" className="grey-text">Digite o nome atual</label>
                     <input type="text" id="nomeAtual" className="form-control" />
                     <br />

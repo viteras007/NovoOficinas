@@ -40,9 +40,9 @@ export default class AdicionarAlimento extends Component {
   render() {
     return (
         <div>
-            <div className="container">
+            <div className="container conteudo containerprincipal">
                 <form>
-                    <p className="h4 text-center mb-4">Criar alimento</p>
+                    <p className="h4 text-center mb-4 titulo">Criar alimento</p>
                     <label htmlFor="nomeAlimento" className="grey-text">Nome do alimento:</label>
                     <input 
                         type="text" 
@@ -51,7 +51,7 @@ export default class AdicionarAlimento extends Component {
                         onChange={(event) => {this.setState({Vname: event.target.value})}}
                     />
                     <br />
-                    <label htmlFor="qtdCarbo" className="grey-text">Qtd carboidratos:</label>
+                    <label htmlFor="qtdCarbo" className="grey-text">Qtd. carboidratos:</label>
                     <input 
                         type="text" 
                         id="qtdCarbo" 
@@ -59,7 +59,7 @@ export default class AdicionarAlimento extends Component {
                         onChange={(event) => {this.setState({Vcarboidrato: event.target.value})}}
                     />
                     <br />
-                    <label htmlFor="qtdProteina" className="grey-text">Qtd proteínas:</label>
+                    <label htmlFor="qtdProteina" className="grey-text">Qtd. proteínas:</label>
                     <input 
                         type="text" 
                         id="qtdProteina" 
@@ -67,7 +67,7 @@ export default class AdicionarAlimento extends Component {
                         onChange={(event) => {this.setState({Vproteina: event.target.value})}}
                     />
                     <br />
-                    <label htmlFor="qtdGordura" className="grey-text">Qtd gorduras:</label>
+                    <label htmlFor="qtdGordura" className="grey-text">Qtd. gorduras:</label>
                     <input 
                         type="text" 
                         id="qtdGordura" 
