@@ -20,12 +20,10 @@ export default class AlterarSenha extends Component {
         console.log(usuario.Id)
     }
 
-    Teste = () => {
-        alert(this.usuario.Id);
-    }
+    
     onSubmitPass = () => {                
         //alert(this.usuario.Id + "/" + this.state.newpass) 
-
+/*
         
 
             fetch('http://localhost:3001/changepasswd',{
@@ -38,7 +36,7 @@ export default class AlterarSenha extends Component {
             })
             .then(response => response.json())
             .then(alert('ALTERADO COM SUCESSO'))
-        
+        */
     }
   render() {
     return (
@@ -74,7 +72,7 @@ export default class AlterarSenha extends Component {
                         <button 
                             className="btn btn-unique botaoAlterar" 
                             type="submit" 
-                            onChange={this.Teste}
+                            onChange={}
                             >
                             Confirmar Alteração
                         </button>
