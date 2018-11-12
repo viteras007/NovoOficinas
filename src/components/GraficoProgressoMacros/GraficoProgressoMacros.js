@@ -14,7 +14,8 @@ export default class GraficoProgressoMacros extends Component {
             gordura: '40',
             carboidrato: '50'
         }
-	}
+    }
+    
 
 	render() {
         const { proteina, gordura, carboidrato } = this.state;

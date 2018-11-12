@@ -4,14 +4,40 @@ import {Chart} from 'primereact/chart';
 //CSS
 import '../../components/GraficoQtd/GraficoQtd.css'
 
-export default class GraficoQtd extends Component {
+export default class GraficoQtd extends Component {    
+    constructor() {
+        super();
+        this.state = {
+          gordura: 0,
+          proteina: 0,
+          carboidrato: 0
+        }
+      }
+    
+    componentDidMount(){        
+        fetch('http://localhost:3001/dietamacros', {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              idusuario: JSON.parse(sessionStorage.getItem('user')).Id,
+            })
+          })
+          .then(response => response.json())
+          .then(dieta => {
+              this.setState({
+                  gordura: parseFloat(dieta.gordura.toFixed(1)),
+                  proteina: parseFloat(dieta.proteina.toFixed(1)),
+                  carboidrato: parseFloat(dieta.carboidrato.toFixed(1))
+              })
+          })
+    }
 
     render() {
         const data = {
             labels: ['Gorduras','Carboidratos','Proteinas'],
             datasets: [
                 {
-                    data: [300, 50, 100],
+                    data: [this.state.gordura, this.state.carboidrato, this.state.proteina],
                     backgroundColor: [
                         "#FF6384",
                         "#36A2EB",

@@ -17,13 +17,7 @@ export default class Sobre extends Component {
             password: '',
             name: '',
             sexo: ''
-<<<<<<< HEAD
         }
-
-=======
-            
-        }   
->>>>>>> 6cb9f6e68ffa7e39f8d503a3d2802f177194fb3e
     }
   
 
@@ -89,9 +83,6 @@ export default class Sobre extends Component {
                             id="defaultFormRegisterPasswordEx"
                             className="form-control"
                             onChange={this.onPasswordChange}
-<<<<<<< HEAD
-                        />
-=======
                             />
                         <br />
                         <div>
@@ -100,7 +91,6 @@ export default class Sobre extends Component {
                             <RadioButton value="F" name="feminino" onChange={(e) => this.setState({sexo: e.value})} checked={this.state.sexo === 'F'} /> <label className="labelespacamento">Feminino</label>
                             <RadioButton value="M" name="masculino" onChange={(e) => this.setState({sexo: e.value})} checked={this.state.sexo === 'M'} /> <label>Masculino</label>                                  
                         </div>
->>>>>>> 6cb9f6e68ffa7e39f8d503a3d2802f177194fb3e
                         <div className="text-center mt-5 recuoBotao">
                             <button
                                 className="btn btn-unique buttonRegister"

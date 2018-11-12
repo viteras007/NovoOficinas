@@ -39,7 +39,7 @@ export default class Login extends Component {
             .then(response => response.json())
             .then(user => {
                 if(user.Id){                    
-                    sessionStorage.setItem('user', JSON.stringify(user));
+                    sessionStorage.setItem('user', JSON.stringify(user));                    
                     sessionStorage.setItem('logado', true);
 
                     this.props.logar(sessionStorage.getItem('logado'));

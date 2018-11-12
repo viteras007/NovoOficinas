@@ -1,6 +1,6 @@
 // React
 import React, { Component } from 'react';
-import {ProgressBar} from 'primereact/progressbar';
+import { ProgressBar } from 'primereact/progressbar';
 
 
 // Component
@@ -19,22 +19,35 @@ import '../../pages/Dashboard/Dashboard.css'
 
 export default class Dashboard extends Component {
 
-  constructor(){
-     super();
-     this.state = {
-       calorias: 35,
-     }    
-   }
+  constructor() {
+    super();
+    this.state = {
+      calorias: 35,
+      caloriatotal: 0
+    }
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3001/caloriatotal', {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        idusuario: JSON.parse(sessionStorage.getItem('user')).Id,
+      })
+    })
+    .then(response => response.json())
+    .then(caloria => {this.setState({caloriatotal: parseFloat(caloria.toFixed(2))})})
+  }
 
   render() {
     return (
       <div>
-        
+
         <div className='container'>
           <div className="container dashboardGraphics">
             <p className="titulo">Calorias</p>
-            <ProgressBar value={this.state.calorias}  />
-            <label className="subtitulo">Qtd de Calorias Diárias: </label>
+            <ProgressBar value={this.state.calorias} />
+            <label className="subtitulo">Qtd de Calorias Diárias: {this.state.caloriatotal}</label>
           </div>
           <div className="container dashboardGraphics">
             <GraficoQtd></GraficoQtd>

@@ -51,12 +51,10 @@ export default class Login extends Component {
                 <Link to="/alterarmeta">Alterar Meta</Link>
               </MenuItem>
             </NavDropdown>
-<<<<<<< HEAD
+
             {/* MANDAR PARA PAGINA INICIAL*/ }
-            <NavItem className='logoutButton' eventKey={4} onClick={this.sessionClear}><Link to="/">Sair</Link></NavItem>
-=======
-            <NavItem className='logoutButton' eventKey={3}><Link to="/sobre">Sair</Link></NavItem>
->>>>>>> 6cb9f6e68ffa7e39f8d503a3d2802f177194fb3e
+            <NavItem className='logoutButton' eventKey={4} onClick={this.sessionClear}><Link to="/">Sair</Link></NavItem>           
+
           </Nav>
         </NavbarCollapse>
       </Navbar>
