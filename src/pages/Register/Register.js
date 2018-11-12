@@ -10,7 +10,8 @@ export default class Sobre extends Component {
         this.state = {
             email: '',
             password: '',
-            name: ''
+            name: '',
+            sexo: ''
         }   
 
     }
@@ -23,6 +24,9 @@ export default class Sobre extends Component {
     onPasswordChange = (event) => {
         this.setState({ password: event.target.value})
     }
+    onSexoChange = (event) => {
+        this.setState({ sexo: event.target.value})
+    }
     onSubmitRegister = () => {
         fetch('http://localhost:3001/register',{
             method: 'post',
@@ -30,7 +34,8 @@ export default class Sobre extends Component {
             body: JSON.stringify({
                 email: this.state.email,
                 password: this.state.password,
-                name: this.state.name
+                name: this.state.name,
+                sexo: this.state.sexo
             })
         })
             .then(response => response.json())
