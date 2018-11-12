@@ -50,6 +50,15 @@ export default class AlterarMeta extends Component {
                             className="form-control"
                             value="eee" readOnly
                         />
+                        <Panel header="Qual sua Idade Atual?" className="espacamento">
+                            <input
+                                type="text"
+                                id="IdadeAtual"
+                                className="form-control"
+                                placeholder="Idade Atual"
+                                onChange={(event) => { this.setState({ Idade: event.target.value }) }}
+                            />
+                        </Panel>
                         <Panel header="Qual seu Peso Atual em Kg?" className="espacamento">
                             <input
                                 type="text"

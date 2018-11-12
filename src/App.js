@@ -16,7 +16,6 @@ import Register from "./pages/Register/Register";
 // DashBoard Pages
 import AlterarSenha from "./pages/AlterarSenha/AlterarSenha"
 import DashBoardPage from "./pages/Dashboard/Dashboard";
-import AlterarNome from "./pages/AlterarNome/AlterarNome";
 import AlterarMeta from "./pages/AlterarMeta/AlterarMeta";
 import AdicionarAlimento from "./pages/AdicionarAlimento/AdicionarAlimento";
 import BuscarALimento from "./pages/BuscarAlimento/BuscarAlimento";
@@ -90,7 +89,6 @@ class App extends Component {
             <DashboardNavbar></DashboardNavbar> 
             <Route exact path="/" component={DashBoardPage}/> 
             <Route path="/alterarsenha" component={AlterarSenha}/>
-            <Route path="/alterarnome" component={AlterarNome}/>
             <Route path="/alterarmeta" component={AlterarMeta}/>
             <Route path="/adicionaralimento" component={AdicionarAlimento}/>
             <Route path="/buscaralimento" component={BuscarALimento}/>

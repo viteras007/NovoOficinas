@@ -50,9 +50,6 @@ export default class Login extends Component {
                 <Link to="/alterarsenha">Alterar Senha</Link>
               </MenuItem>
               <MenuItem eventKey={3.2}>
-                <Link to="/alterarnome">Alterar Nome</Link>
-              </MenuItem>
-              <MenuItem eventKey={3.3}>
                 <Link to="/alterarmeta">Alterar Meta</Link>
               </MenuItem>
             </NavDropdown>
