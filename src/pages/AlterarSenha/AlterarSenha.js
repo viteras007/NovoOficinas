@@ -16,12 +16,21 @@ export default class AlterarSenha extends Component {
             repnewpass: '',
             newpass: ''
         }
-        const usuario = JSON.parse(sessionStorage.getItem('user'));
-        console.log(usuario.Id)
     }
-   
-    onSubmitPass = () => {               
-
+    //JSON.parse(sessionStorage.getItem('user')).name
+    onSubmitPass = () => {
+        if(this.state.oldpass === JSON.parse(sessionStorage.getItem('user')).password && this.state.newpass === this.state.repnewpass){
+            fetch('http://localhost:3001/changepasswd', {
+                method: 'put',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    id: JSON.parse(sessionStorage.getItem('user')).Id,
+                    password: this.state.newpass
+                })
+            })
+                .then(response => response.json())
+                .then(alert('ALTERADO COM SUCESSO'))
+        }
     }
 
     render() {
@@ -29,6 +38,7 @@ export default class AlterarSenha extends Component {
             <div>
                 <div className="container">
                     <form>
+                        <p></p>
                         <p className="h4 text-center mb-4">Alterar Senha</p>
                         <label htmlFor="senhaAtual" className="grey-text">Digite a senha atual</label>
                         <input
@@ -57,8 +67,8 @@ export default class AlterarSenha extends Component {
                         <div className="text-center mt-5 ">
                             <button
                                 className="btn btn-unique botaoAlterar"
-                                type="submit"
-                                onChange={this.onSubmitPass}
+                                type="submit"                                
+                                onClick={this.onSubmitPass}
 
                             >
                                 Confirmar Alteração
