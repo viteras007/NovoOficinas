@@ -6,13 +6,16 @@ import '../../components/SearchBox/SearchBox.css'
 
 const SearchBox = ( {searchfield, searchChange} ) => {
 	return(
-		<div>
-			<input 
-				className='pa3 ba b--green bg-lightest-blue searchstyle'
-				type='search' 
-				placeholder='Nome do Alimento'
-				onChange={searchChange}
-			/>
+		<div className="alinhamento">
+			<div className='search-box'>
+				<input 
+					className='search-txt'
+					type='text' 
+					placeholder='Nome do Alimento'
+					onChange={searchChange}
+				/>
+				<i class="fas fa-search search-btn"></i>
+			</div>
 		</div>
 	);
 }

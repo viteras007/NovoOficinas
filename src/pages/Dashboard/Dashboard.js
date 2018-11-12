@@ -20,10 +20,10 @@ export default class Dashboard extends Component {
       <div>
         
         <div className='container'>
-          <div className="">
+          <div className="container dashboardGraphics">
             <GraficoMacros></GraficoMacros>
           </div>
-          <div className="espacamento">
+          <div className="container dashboardGraphics">
             <GraficoRefeicoes></GraficoRefeicoes>
           </div>
         </div>

@@ -26,9 +26,9 @@ export default class GraficoProgressoMacros extends Component {
                     </div>
                 </div>
                 <div>
-                    <p>Proteína</p><ProgressBar now={proteina} label={`${proteina}%`} />
-                    <p>Gordura</p><ProgressBar now={gordura} label={`${gordura}%`} />
-                    <p>Carboidrato</p><ProgressBar now={carboidrato} label={`${carboidrato}%`} />
+                    <p className="conteudo">Proteína</p><ProgressBar now={proteina} label={`${proteina}%`} />
+                    <p className="conteudo">Gordura</p><ProgressBar now={gordura} label={`${gordura}%`} />
+                    <p className="conteudo">Carboidrato</p><ProgressBar now={carboidrato} label={`${carboidrato}%`} />
                 </div>
             </div>
 		)

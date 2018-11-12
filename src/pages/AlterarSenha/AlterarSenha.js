@@ -51,7 +51,7 @@ export default class AlterarSenha extends Component {
                 <br />
                 <label htmlFor="novaSenha" className="grey-text">Digite a nova senha</label>
                 <input
-                    type="text" 
+                    type="password" 
                     id="novaSenha" 
                     className="form-control"
                     onChange={(event) => {this.setState({newpass: event.target.value})}}
@@ -59,7 +59,7 @@ export default class AlterarSenha extends Component {
                 <br />
                 <label htmlFor="confirmacaoSenha" className="grey-text">Digite novamente a nova senha</label>
                 <input 
-                    type="text" 
+                    type="password" 
                     id="confirmacaoSenha" 
                     className="form-control" 
                     onChange={(event) => {this.setState({repnewpass: event.target.value})}}
