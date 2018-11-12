@@ -41,8 +41,7 @@ class App extends Component {
     this.state = {
       logado: false
       // ADD OS DADOS DO USUARIO PARA RECEBER DA PAGINA LOGIN QUANDO ELE ESTIVER LOGADO
-    }
-    console.log(this.state.logado);
+    }    
   }
 
   
@@ -58,8 +57,7 @@ class App extends Component {
 
       this.setState({
         logado: logou
-      });
-      console.log(this.state.logado);
+      });      
   }
   
   componentDidMount(){

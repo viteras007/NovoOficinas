@@ -41,8 +41,7 @@ export default class Login extends Component {
         })
             .then(response => response.json())
             .then(user => {
-                if(user.Id){
-                    console.log(user.name + ' LOGOU');
+                if(user.Id){                    
                     sessionStorage.setItem('user', JSON.stringify(user));
                     sessionStorage.setItem('logado', true);
 
@@ -52,8 +51,7 @@ export default class Login extends Component {
                     // POSSIVEL USAR TODOS DADOS DO USUARIO                
 
                 }
-                else{
-                    console.log('ERROR');
+                else{                    
                     sessionStorage.setItem('logado', false);
                     // MENSAGEM DE ERRO
                 }

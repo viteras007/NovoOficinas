@@ -15,7 +15,6 @@ const pegardados = () => {
 	})
 }
 pegardados();
-console.log(arrayLink)
 const CardList = ({ alimentos }) => {
 	const CardArray = alimentos.map((user, i) =>{
 		return( 
