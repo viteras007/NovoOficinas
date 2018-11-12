@@ -17,9 +17,7 @@ const Card = ({ name, link, id } ) => {
 					<h2> { name } </h2>
 					<p> {  }</p>
 					<div className='cardbuttons'>
-						<Button className="p-button-raised p-button-rounded p-button-success " label="Add na refeiçao" icon="pi pi-check" />
-						<Button className="p-button-raised p-button-rounded" label="Editar" />
-						<Button className="p-button-raised p-button-rounded p-button-danger " label="Excluir" />
+						<Button id="btadd" className="p-button-raised p-button-rounded p-button-success " label="Add na refeiçao" icon="pi pi-check" />
 					</div>
 					
 				</div>
