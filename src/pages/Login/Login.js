@@ -45,7 +45,14 @@ export default class Login extends Component {
                     console.log(user.name + ' LOGOU');
                     sessionStorage.setItem('user', JSON.stringify(user));
                     sessionStorage.setItem('logado', true);
+<<<<<<< HEAD
                     this.props.logar(sessionStorage.getItem('logado'));            
+=======
+                    this.props.logar(sessionStorage.getItem('logado'));
+                    //this.funcaoteste(true);
+                    // ROTA PARA ELE LOGADO
+                    // POSSIVEL USAR TODOS DADOS DO USUARIO                
+>>>>>>> c3d7dc6c890b166314dca283d73ee6396d484c29
                 }
                 else{
                     console.log('ERROR');
