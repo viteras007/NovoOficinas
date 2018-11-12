@@ -16,24 +16,29 @@ export default class AlterarSenha extends Component {
             repnewpass: '',
             newpass: ''
         }  
+        const usuario = JSON.parse(sessionStorage.getItem('user'));
+        console.log(usuario.Id)
     }
 
+    Teste = () => {
+        alert(this.usuario.Id);
+    }
     onSubmitPass = () => {                
-        const { oldpass, repnewpass, newpass} = this.state;
-        // SE A SENHA ANTIGA FOR IGUAL A SENHA QUE ESTÁ SALVA NO SESSION STORAGE QUANDO O USUARIO LOGA
-        if(repnewpass === newpass && oldpass === sessionStorage()){
+        //alert(this.usuario.Id + "/" + this.state.newpass) 
 
-            fetch('http://localhost:3001/insertfood',{
+        
+
+            fetch('http://localhost:3001/changepasswd',{
                 method: 'put',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
-                    Id: sessionStorage(),//PASSAR O ID NO SESSION STORAGE
-                    password: newpass                    
+                    id: this.usuario.Id,
+                    password: this.state.newpass                    
                 })
             })
             .then(response => response.json())
             .then(alert('ALTERADO COM SUCESSO'))
-        }
+        
     }
   render() {
     return (
@@ -69,7 +74,8 @@ export default class AlterarSenha extends Component {
                         <button 
                             className="btn btn-unique botaoAlterar" 
                             type="submit" 
-                            onClick={this.onSubmitPass}>
+                            onChange={this.Teste}
+                            >
                             Confirmar Alteração
                         </button>
                 </div>

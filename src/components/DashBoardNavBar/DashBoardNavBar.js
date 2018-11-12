@@ -17,14 +17,14 @@ import { BrowserRouter as  Router, Route, Link } from "react-router-dom";
 import "../../components/DashBoardNavBar/DashBoardNavBar.css";
 
 export default class Login extends Component {
-    
-  render() {
+  render() {    
+    let usuario = JSON.parse(sessionStorage.getItem('user'));    
     return (
       <div id="top">
       <Navbar inverse collapseOnSelect fixedTop>
         <NavbarHeader>
           <NavbarBrand>
-            <Link to="/" className="headerLogo">aa</Link>
+            <Link to="/" className="headerLogo">{usuario.name}</Link>            
             {/* para pegar o nome do cara */}
             { /* {JSON.parse(sessionStorage.getItem('user').name)} */}
           </NavbarBrand>
