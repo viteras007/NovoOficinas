@@ -17,6 +17,9 @@ import { BrowserRouter as  Router, Route, Link } from "react-router-dom";
 import "../../components/DashBoardNavBar/DashBoardNavBar.css";
 
 export default class Login extends Component {
+  sessionClear = () => {
+    sessionStorage.clear();
+  }
   render() {    
     let usuario = JSON.parse(sessionStorage.getItem('user'));    
     return (
@@ -53,7 +56,8 @@ export default class Login extends Component {
                 <Link to="/alterarmeta">Alterar Meta</Link>
               </MenuItem>
             </NavDropdown>
-            <NavItem className='logoutButton' eventKey={4}><Link to="/sobre">Sair</Link></NavItem>
+            {/* MANDAR PARA PAGINA INICIAL*/ }
+            <NavItem className='logoutButton' eventKey={4} onClick={this.sessionClear}><Link to="/">Sair</Link></NavItem>
           </Nav>
         </NavbarCollapse>
       </Navbar>

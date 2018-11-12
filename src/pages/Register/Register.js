@@ -5,32 +5,32 @@ import React, { Component } from 'react'
 import '../../pages/Register/Register.css';
 
 export default class Sobre extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             email: '',
             password: '',
             name: '',
             sexo: ''
-        }   
+        }
 
     }
     onNameChange = (event) => {
-        this.setState({ name: event.target.value})
+        this.setState({ name: event.target.value })
     }
     onEmailChange = (event) => {
-        this.setState({ email: event.target.value})
+        this.setState({ email: event.target.value })
     }
     onPasswordChange = (event) => {
-        this.setState({ password: event.target.value})
+        this.setState({ password: event.target.value })
     }
     onSexoChange = (event) => {
-        this.setState({ sexo: event.target.value})
+        this.setState({ sexo: event.target.value })
     }
     onSubmitRegister = () => {
-        fetch('http://localhost:3001/register',{
+        fetch('http://localhost:3001/register', {
             method: 'post',
-            headers: {'Content-Type': 'application/json'},
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 email: this.state.email,
                 password: this.state.password,
@@ -40,10 +40,10 @@ export default class Sobre extends Component {
         })
             .then(response => response.json())
             .then(user => {
-                if (user){
-                    console.log('REGISTROU')
+                if (user) {
+                    alert('Usuario Registrado com Sucesso!')
                     //MUDAR A ROTA, PORQUE USUARIO REGISTROUU
-                }                
+                }
             })
         console.log(this.state)
     }
@@ -55,31 +55,31 @@ export default class Sobre extends Component {
                     <form>
                         <p className="h4 text-center regTitle mb-4">Cadastrar</p>
                         <label htmlFor="defaultFormRegisterNameEx" className="grey-text">Your name</label>
-                        <input 
-                            type="text" 
-                            id="defaultFormRegisterNameEx" 
-                            className="form-control" 
+                        <input
+                            type="text"
+                            id="defaultFormRegisterNameEx"
+                            className="form-control"
                             onChange={this.onNameChange}
-                            />
+                        />
                         <br />
                         <label htmlFor="defaultFormRegisterEmailEx" className="grey-text">Your email</label>
-                        <input 
-                            type="email" 
-                            id="defaultFormRegisterEmailEx" 
+                        <input
+                            type="email"
+                            id="defaultFormRegisterEmailEx"
                             className="form-control"
                             onChange={this.onEmailChange}
-                            />
+                        />
                         <br />
                         <label htmlFor="defaultFormRegisterPasswordEx" className="grey-text">Your password</label>
-                        <input 
-                            type="password" 
-                            id="defaultFormRegisterPasswordEx" 
-                            className="form-control" 
+                        <input
+                            type="password"
+                            id="defaultFormRegisterPasswordEx"
+                            className="form-control"
                             onChange={this.onPasswordChange}
-                            />
+                        />
                         <div className="text-center mt-5 recuoBotao">
-                            <button 
-                                className="btn btn-unique buttonRegister" 
+                            <button
+                                className="btn btn-unique buttonRegister"
                                 type="submit"
                                 onClick={this.onSubmitRegister}
                             >Register</button>

@@ -11,8 +11,8 @@ import '../../pages/AlterarMeta/AlterarMeta.css'
 
 export default class AlterarMeta extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             Altura: '',
             Peso: '',
@@ -21,7 +21,20 @@ export default class AlterarMeta extends Component {
         }
     }
 
+
     onSubmitAltera = () => {
+                
+        fetch('http://localhost:3001/progresso', {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({                
+                peso: JSON.parse(sessionStorage.getItem('user')).weight,
+                idusuario: JSON.parse(sessionStorage.getItem('user')).Id
+            })
+        })
+            .then(response => response.json())
+            .then(console.log("progresso salvo!"))
+
         fetch('http://localhost:3001/alterauser', {
             method: 'put',
             headers: { 'Content-Type': 'application/json' },
@@ -36,7 +49,38 @@ export default class AlterarMeta extends Component {
             .then(response => response.json())
             .then(alert('ALTERADO COM SUCESSO'))
 
+
+        let val
+        if (JSON.parse(sessionStorage.getItem('user')).sexo === 'F') {
+            val = (655.1 + (9.5 * this.state.Peso) + (1.8 * this.state.Altura) - (4.7 * this.state.Idade)) * 1.2;
+
+        }
+        if (JSON.parse(sessionStorage.getItem('user')).sexo === 'M') {
+            val = (655.5 + (13.8 * this.state.Peso) + (5 * this.state.Altura) - (6.8 * this.state.Idade)) * 1.2;
+        }
+        let proteinaDieta = (0.2 * val) / 4;
+        let carboidratoDieta = (0.6 * val) / 4;
+        let gorduraDieta = (0.2 * val) / 9;
+
+        fetch('http://localhost:3001/criardieta', {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                caloria: val,
+                proteina: proteinaDieta,
+                carboidrato: carboidratoDieta,
+                gordura: gorduraDieta,
+                idusuario: JSON.parse(sessionStorage.getItem('user')).Id
+            })
+        })
+            .then(response => response.json())
+            .then(alert('INSERIDO COM SUCESSO'))
+
+        
     }
+
+
+
     render() {
         return (
             <div>
