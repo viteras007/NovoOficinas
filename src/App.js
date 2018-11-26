@@ -33,15 +33,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
-<<<<<<< HEAD
   constructor(){   
     super();    
-=======
-  constructor(){
-   // sessionStorage.setItem('logado', false)
-    super();
-    sessionStorage.setItem('logado', false);
->>>>>>> a01677008e2f90a0d887eb1eff04904f25c1a87a
     this.state = {
       logado: ''     
     }    
