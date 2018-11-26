@@ -18,7 +18,10 @@ import "../../components/DashBoardNavBar/DashBoardNavBar.css";
 
 export default class Login extends Component {
   sessionClear = () => {
-    sessionStorage.clear();
+    //sessionStorage.clear();
+    sessionStorage.removeItem('user');
+    sessionStorage.setItem('logado', false);
+    console.log("STORAGE:"+sessionStorage.getItem('logado'))
   }
   render() {    
     let usuario = JSON.parse(sessionStorage.getItem('user'));    
@@ -53,7 +56,7 @@ export default class Login extends Component {
             </NavDropdown>
 
             {/* MANDAR PARA PAGINA INICIAL*/ }
-            <NavItem className='logoutButton' eventKey={4} onClick={this.sessionClear}><Link to="/">Sair</Link></NavItem>           
+            <NavItem className='logoutButton' eventKey={4} onClick={this.sessionClear}><Link to="/">Sair</Link></NavItem>
 
           </Nav>
         </NavbarCollapse>

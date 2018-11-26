@@ -65,6 +65,9 @@ class App extends Component {
       .then(console.log)                
   }
 
+  componentDidUpdate(){
+    this.state.logado = sessionStorage.getItem('logado');
+  }
 
 
   render() {

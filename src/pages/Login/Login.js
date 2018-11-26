@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/lib/Col';
 import Button from 'react-bootstrap/lib/Button';
 import ControlLabel from 'react-bootstrap/lib/ControlLabel';
 import FormControl from 'react-bootstrap/lib/FormControl';
+import { BrowserRouter as  Router, Route, Link } from "react-router-dom";
 
 // CSS
 import "../../cssPadrao/cssPadrao.css";
@@ -18,7 +19,6 @@ export default class Login extends Component {
             signInPassword: '',
             
         }   
-
     }
     
     onEmailChange = (event) => {
@@ -83,14 +83,15 @@ export default class Login extends Component {
                             onChange={this.onPasswordChange}/>
                         </Col>
                     </FormGroup>
-
-                    <FormGroup
-                    type="submit"
-                    onClick={this.onSubmitSignIn}>
-                        <Col smOffset={2} sm={10}>
-                        <Button>Logar</Button>
-                        </Col>
-                    </FormGroup>
+                    <Link to="/" >
+                        <FormGroup
+                        type="submit"
+                        onClick={this.onSubmitSignIn}>
+                            <Col smOffset={2} sm={10}>
+                            <Button>Logar</Button>
+                            </Col>
+                        </FormGroup>
+                    </Link>
                 </Form>
             </div>
         </div>

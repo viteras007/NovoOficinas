@@ -1,12 +1,12 @@
 // React
 import React, { Component } from 'react';
+import { BrowserRouter as  Router, Route, Link } from "react-router-dom";
 
 // Component
 
 
 //CSS
 import '../../pages/AdicionarAlimento/AdicionarAlimento.css'
-
 
 export default class AdicionarAlimento extends Component {
     constructor(props){
@@ -84,12 +84,14 @@ export default class AdicionarAlimento extends Component {
                     />
                     <br />
                     <div className="text-center mt-5 ">
+                    <Link to="/buscaralimento" >
                         <button 
                             className="btn btn-unique botaoAlterar" 
                             type="submit" 
                             onClick={this.onSubmitFood}>
                             Confirmar Alteração
                         </button>
+                    </Link>
                     </div>
                     <br />
                 </form>
