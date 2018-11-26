@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 // Component
 import { RadioButton } from 'primereact/radiobutton';
 import { Panel } from 'primereact/panel';
+import { BrowserRouter as  Router, Route, Link } from "react-router-dom";
 
 //CSS
 import '../../pages/AlterarMeta/AlterarMeta.css'
@@ -132,12 +133,14 @@ export default class AlterarMeta extends Component {
                         </Panel>
 
                         <div className="text-center mt-5 ">
+                        <Link to="/">
                             <button
                                 className="espacamento btn btn-unique botaoAlterar"
                                 type="submit"
                                 onClick={this.onSubmitAltera}>
                                 Confirmar Alteração
-                        </button>
+                            </button>
+                        </Link>
                         </div>
                     </form>
                 </div>

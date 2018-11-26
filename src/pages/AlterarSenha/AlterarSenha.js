@@ -1,5 +1,6 @@
 // React
 import React, { Component } from 'react';
+import { BrowserRouter as  Router, Route, Link } from "react-router-dom";
 
 // Component
 
@@ -15,7 +16,13 @@ export default class AlterarSenha extends Component {
             oldpass: '',
             repnewpass: '',
             newpass: ''
-        }
+        }        
+        this.mostrarUser();
+    }
+    mostrarUser = () => {
+        let usuario = JSON.parse(sessionStorage.getItem('user')); 
+        console.log("Session Storage: "+usuario.name);
+        console.log("Session Storage LOGADO: "+sessionStorage.getItem('logado'));
     }
     //JSON.parse(sessionStorage.getItem('user')).name
     onSubmitPass = () => {
@@ -30,7 +37,8 @@ export default class AlterarSenha extends Component {
             })
                 .then(response => response.json())
                 .then(alert('ALTERADO COM SUCESSO'))
-        }
+        }   
+             
     }
 
     render() {
@@ -64,15 +72,17 @@ export default class AlterarSenha extends Component {
                             onChange={(event) => { this.setState({ repnewpass: event.target.value }) }}
                         />
                         <br />
-                        <div className="text-center mt-5 ">
+                        <div className="text-center mt-5 ">                        
+                        <Link to="/">
                             <button
                                 className="btn btn-unique botaoAlterar"
-                                type="submit"                                
+                                type="submit"
                                 onClick={this.onSubmitPass}
 
                             >
                                 Confirmar Alteração
-                        </button>
+                            </button>
+                            </Link>                        
                         </div>
                         <br />
                     </form>
