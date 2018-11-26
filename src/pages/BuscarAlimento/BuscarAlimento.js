@@ -24,7 +24,12 @@ export default class BuscarAlimento extends Component {
         // colocar aqui a busca no banco de dados de onde vai consumir os dados
 		fetch('http://localhost:3001/allfood')
 			.then(response => response.json())
-			.then(food => this.setState({ alimentos: food }));		
+			.then(food => this.setState({ 
+				alimentos: food 
+			}, () => {
+				
+			}));
+					
 	}
 
 	onSearchChange = (event) => {
@@ -45,7 +50,7 @@ export default class BuscarAlimento extends Component {
 			.then(food => () =>{
 				console.log(food)
 			})*/
-			alert("ADD"+id)		
+			alert("ADD:"+id)		
 	}
 	removerAlimento = () => {
 		alert("REMOVER ALIMENTO");

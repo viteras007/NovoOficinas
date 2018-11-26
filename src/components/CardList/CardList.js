@@ -16,13 +16,13 @@ const pegardados = () => {
 }
 pegardados();
 
-const CardList = ({ alimentos, add }) => {
-	const CardArray = alimentos.map((user, i) =>{
+const CardList = ({ alimentos, add }) => {	
+	const CardArray = alimentos.map((user, i) =>{		
 		return( 
 			<Card
-				add={add}
-				key={alimentos[i].id} 
-				id={alimentos[i].id} 
+				add={add}							
+				key={alimentos[i].Id} 
+				id={alimentos[i].Id} 
 				name={alimentos[i].name}
 				link={arrayLink[i]}							
 			/>
