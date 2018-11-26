@@ -6,7 +6,8 @@ export default class LineChartDemo extends Component {
         super();
         this.state = {
             calorias: 0,
-            progressopeso: []
+            progressopeso: [],
+            progressodata: [],
         }
     }
 
@@ -21,27 +22,35 @@ export default class LineChartDemo extends Component {
         .then(response => response.json())
         .then(progresso => { 
 
-            for(let i = 0; i < progresso.lenght; i++){
-                this.state.progressopeso.push(progresso[i]);
-            }
-            /*
-            this.state.progressopeso.push(progresso[0])
-            this.state.progressopeso.push(progresso[1])
-            this.state.progressopeso.push(progresso[2])*/
+            new Promise((resolve, reject) => {
+                let arraypeso = [];
+                let arraydata = [];
+
+                for(let i = 0; i < progresso.length; i++ ){
+                    arraypeso.push(progresso[i].peso);
+                    arraydata.push(progresso[i].data);
+                }
+
+                this.setState(
+                    {
+                        progressopeso: arraypeso,
+                        progressodata: arraydata
+                    }
+                );
+
+            });
         })
-        console.log(this.state.progressopeso)
     }
 
     render() {
 
 
-
         const data = {
-            labels: ['01/02', '02/03', '20/04', '05/05', '15/06', '17/07', '02/08', '22/08', '12/10', '30/11'],
+            labels: this.state.progressodata,
             datasets: [
                 {
                     label: 'Desempenho',
-                    data: [61, 59, 80, 81, 40, 55, 40, 22, 70, 10, 5],
+                    data: this.state.progressopeso,
                     fill: false,
                     backgroundColor: '#42A5F5',
                     borderColor: '#42A5F5'

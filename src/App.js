@@ -36,7 +36,7 @@ class App extends Component {
   constructor(){   
     super();    
     this.state = {
-      logado: ''     
+      logado: 'false'     
     }    
     //this.funclogado();
     console.log(this.state.logado)

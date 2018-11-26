@@ -9,6 +9,7 @@ import GraficoMacros from "../../components/GraficoProgressoMacros/GraficoProgre
 import GraficoRefeicoes from "../../components/GraficoRefeicoes/GraficoRefeicoes";
 import GraficoQtd from "../../components/GraficoQtd/GraficoQtd";
 import GraficoDesempenho from "../../components/GraficoDesempenho/GraficoDesempenho";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 //CSS
 import '../../pages/Dashboard/Dashboard.css'
@@ -28,6 +29,7 @@ export default class Dashboard extends Component {
   }
 
   componentDidMount() {
+
     fetch('http://localhost:3001/caloriatotal', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
@@ -35,12 +37,18 @@ export default class Dashboard extends Component {
         idusuario: JSON.parse(localStorage.getItem('user')).Id,
       })
     })
-    .then(response => response.json())
-    .then(caloria => {this.setState({caloriatotal: parseFloat(caloria.toFixed(2))})})
+      .then(response => response.json())
+      .then(caloria => {
+        this.setState({
+          caloriatotal: parseFloat(caloria.toFixed(2))
+        })
+      })
+
   }
 
   render() {
     return (
+
       <div>
 
         <div className='container'>

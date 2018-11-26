@@ -41,9 +41,7 @@ export default class Login extends Component {
                 if(user.Id){                    
                     localStorage.setItem('user', JSON.stringify(user));                    
                     localStorage.setItem('logado', true);
-
-                    this.props.logar(localStorage.getItem('logado'));
-                    
+                    this.props.logar(localStorage.getItem('logado'));                    
                     //this.funcaoteste(true);
                     // ROTA PARA ELE LOGADO
                     // POSSIVEL USAR TODOS DADOS DO USUARIO                
@@ -53,8 +51,14 @@ export default class Login extends Component {
                     localStorage.setItem('logado', false);
                     // MENSAGEM DE ERRO
                 }
-            })            
-    }   
+            })
+            
+            ///  CRIAR DIET            
+
+            
+                   
+    } 
+
   render() {
     return (
         <div>

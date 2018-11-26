@@ -22,6 +22,7 @@ export default class Login extends Component {
     localStorage.removeItem('user');
     localStorage.setItem('logado', false);
     console.log("STORAGE:"+localStorage.getItem('logado'))
+    
   }
   render() {    
     let usuario = JSON.parse(localStorage.getItem('user'));    
