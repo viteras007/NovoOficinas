@@ -32,7 +32,7 @@ export default class BuscarAlimento extends Component {
 				
 	}
 
-	adicionarAlimento = () => {
+	adicionarAlimento = (id) => {
 		/*
 		fetch('http://localhost:3001/buscafood',{
 			method: 'post',
@@ -45,7 +45,7 @@ export default class BuscarAlimento extends Component {
 			.then(food => () =>{
 				console.log(food)
 			})*/
-			alert("ADD:")		
+			alert("ADD"+id)		
 	}
 	removerAlimento = () => {
 		alert("REMOVER ALIMENTO");
