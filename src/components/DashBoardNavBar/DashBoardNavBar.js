@@ -18,21 +18,24 @@ import "../../components/DashBoardNavBar/DashBoardNavBar.css";
 
 export default class Login extends Component {
   sessionClear = () => {
-    //sessionStorage.clear();
-    sessionStorage.removeItem('user');
-    sessionStorage.setItem('logado', false);
-    console.log("STORAGE:"+sessionStorage.getItem('logado'))
+    //localStorage.clear();
+    localStorage.removeItem('user');
+    localStorage.setItem('logado', false);
+    console.log("STORAGE:"+localStorage.getItem('logado'))
   }
   render() {    
-    let usuario = JSON.parse(sessionStorage.getItem('user'));    
+    let usuario = JSON.parse(localStorage.getItem('user'));    
     return (
       <div id="top">
       <Navbar inverse collapseOnSelect fixedTop>
         <NavbarHeader>
-          <NavbarBrand>
-            <Link to="/" className="headerLogo">{usuario.name}</Link>            
+          <NavbarBrand>{}
+
+            <Link to="/" className="headerLogo">{                
+                  usuario.name
+              }</Link>            
             {/* para pegar o nome do cara */}
-            { /* {JSON.parse(sessionStorage.getItem('user').name)} */}
+            { /* {JSON.parse(localStorage.getItem('user').name)} */}
           </NavbarBrand>
           <NavbarToggle />
         </NavbarHeader>

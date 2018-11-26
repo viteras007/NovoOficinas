@@ -17,28 +17,23 @@ export default class AlterarSenha extends Component {
             repnewpass: '',
             newpass: ''
         }        
-        this.mostrarUser();
     }
-    mostrarUser = () => {
-        let usuario = JSON.parse(sessionStorage.getItem('user')); 
-        console.log("Session Storage: "+usuario.name);
-        console.log("Session Storage LOGADO: "+sessionStorage.getItem('logado'));
-    }
-    //JSON.parse(sessionStorage.getItem('user')).name
+
+    //JSON.parse(localStorage.getItem('user')).name
     onSubmitPass = () => {
-        if(this.state.oldpass === JSON.parse(sessionStorage.getItem('user')).password && this.state.newpass === this.state.repnewpass){
+        if(this.state.oldpass === JSON.parse(localStorage.getItem('user')).password && this.state.newpass === this.state.repnewpass){
             fetch('http://localhost:3001/changepasswd', {
                 method: 'put',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    id: JSON.parse(sessionStorage.getItem('user')).Id,
+                    id: JSON.parse(localStorage.getItem('user')).Id,
                     password: this.state.newpass
                 })
             })
                 .then(response => response.json())
                 .then(alert('ALTERADO COM SUCESSO'))
         }   
-             
+        
     }
 
     render() {
@@ -73,16 +68,15 @@ export default class AlterarSenha extends Component {
                         />
                         <br />
                         <div className="text-center mt-5 ">                        
-                        <Link to="/">
+                        
                             <button
                                 className="btn btn-unique botaoAlterar"
                                 type="submit"
                                 onClick={this.onSubmitPass}
-
                             >
                                 Confirmar Alteração
                             </button>
-                            </Link>                        
+                                                  
                         </div>
                         <br />
                     </form>

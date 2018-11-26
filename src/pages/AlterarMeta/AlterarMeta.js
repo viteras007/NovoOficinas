@@ -29,8 +29,8 @@ export default class AlterarMeta extends Component {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({                
-                peso: JSON.parse(sessionStorage.getItem('user')).weight,
-                idusuario: JSON.parse(sessionStorage.getItem('user')).Id
+                peso: JSON.parse(localStorage.getItem('user')).weight,
+                idusuario: JSON.parse(localStorage.getItem('user')).Id
             })
         })
             .then(response => response.json())
@@ -40,7 +40,7 @@ export default class AlterarMeta extends Component {
             method: 'put',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                id: JSON.parse(sessionStorage.getItem('user')).Id,
+                id: JSON.parse(localStorage.getItem('user')).Id,
                 height: this.state.Altura,
                 weight: this.state.Peso,
                 goal: this.state.Meta,
@@ -52,11 +52,11 @@ export default class AlterarMeta extends Component {
 
 
         let val
-        if (JSON.parse(sessionStorage.getItem('user')).sexo === 'F') {
+        if (JSON.parse(localStorage.getItem('user')).sexo === 'F') {
             val = (655.1 + (9.5 * this.state.Peso) + (1.8 * this.state.Altura) - (4.7 * this.state.Idade)) * 1.2;
 
         }
-        if (JSON.parse(sessionStorage.getItem('user')).sexo === 'M') {
+        if (JSON.parse(localStorage.getItem('user')).sexo === 'M') {
             val = (655.5 + (13.8 * this.state.Peso) + (5 * this.state.Altura) - (6.8 * this.state.Idade)) * 1.2;
         }
         let proteinaDieta = (0.2 * val) / 4;
@@ -71,7 +71,7 @@ export default class AlterarMeta extends Component {
                 proteina: proteinaDieta,
                 carboidrato: carboidratoDieta,
                 gordura: gorduraDieta,
-                idusuario: JSON.parse(sessionStorage.getItem('user')).Id
+                idusuario: JSON.parse(localStorage.getItem('user')).Id
             })
         })
             .then(response => response.json())

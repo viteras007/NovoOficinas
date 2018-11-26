@@ -39,10 +39,10 @@ export default class Login extends Component {
             .then(response => response.json())
             .then(user => {
                 if(user.Id){                    
-                    sessionStorage.setItem('user', JSON.stringify(user));                    
-                    sessionStorage.setItem('logado', true);
+                    localStorage.setItem('user', JSON.stringify(user));                    
+                    localStorage.setItem('logado', true);
 
-                    this.props.logar(sessionStorage.getItem('logado'));
+                    this.props.logar(localStorage.getItem('logado'));
                     
                     //this.funcaoteste(true);
                     // ROTA PARA ELE LOGADO
@@ -50,7 +50,7 @@ export default class Login extends Component {
 
                 }
                 else{                    
-                    sessionStorage.setItem('logado', false);
+                    localStorage.setItem('logado', false);
                     // MENSAGEM DE ERRO
                 }
             })            

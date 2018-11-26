@@ -33,14 +33,13 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
-  constructor(){
-   // sessionStorage.setItem('logado', false)
-    super();
-    sessionStorage.setItem('logado', false)
+  constructor(){   
+    super();    
     this.state = {
-      logado: false
-      // ADD OS DADOS DO USUARIO PARA RECEBER DA PAGINA LOGIN QUANDO ELE ESTIVER LOGADO
+      logado: ''     
     }    
+    //this.funclogado();
+    console.log(this.state.logado)
   }
 
   
@@ -59,19 +58,17 @@ class App extends Component {
       });      
   }
   
-  componentDidMount(){
+  componentDidMount(){    
     fetch('http://localhost:3001/')
       .then(response => response.json())
       .then(console.log)                
   }
 
-  componentDidUpdate(){
-    this.state.logado = sessionStorage.getItem('logado');
-  }
 
 
   render() {
-    if (this.state.logado === false){
+    console.log("LOGADO: "+localStorage.getItem('logado'))        
+    if (localStorage.getItem('logado') === 'false'){
       return (
         <Router>
           <div>
@@ -85,7 +82,7 @@ class App extends Component {
         
       );
 
-    }else{
+    }else if (localStorage.getItem('logado') === 'true'){
       return (
         <Router>
           <div>    
@@ -99,7 +96,9 @@ class App extends Component {
         </Router>
       );
     }
+    else{
 
+    }
   }
 }
 
