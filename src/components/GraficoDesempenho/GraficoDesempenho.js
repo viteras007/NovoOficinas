@@ -15,7 +15,7 @@ export default class LineChartDemo extends Component {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                idusuario: JSON.parse(sessionStorage.getItem('user')).Id,
+                idusuario: JSON.parse(localStorage.getItem('user')).Id,
             })
         })
         .then(response => response.json())
