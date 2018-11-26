@@ -3,7 +3,14 @@
     text-align: center;
     border: solid 1px;
     margin-bottom: 5px;
+    
 }
+
+.imgsize{
+    width: 200px;
+    height: 200px;
+}
+
 .bgcard{
     background-color: white;
 }

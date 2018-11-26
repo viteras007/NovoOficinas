@@ -36,7 +36,7 @@ class App extends Component {
   constructor(){
    // sessionStorage.setItem('logado', false)
     super();
-    sessionStorage.setItem('logado', false)
+    sessionStorage.setItem('logado', false);
     this.state = {
       logado: false
       // ADD OS DADOS DO USUARIO PARA RECEBER DA PAGINA LOGIN QUANDO ELE ESTIVER LOGADO
