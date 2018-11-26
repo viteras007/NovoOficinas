@@ -32,6 +32,24 @@ export default class BuscarAlimento extends Component {
 				
 	}
 
+	adicionarAlimento = () => {
+		/*
+		fetch('http://localhost:3001/buscafood',{
+			method: 'post',
+			headers: {'Content-Type': 'application/json'},
+			body: JSON.stringify({
+				id: id
+			})
+		})
+			.then(response => response.json())
+			.then(food => () =>{
+				console.log(food)
+			})*/
+			alert("ADD:")		
+	}
+	removerAlimento = () => {
+		alert("REMOVER ALIMENTO");
+	}
     render(){
 		const { alimentos, searchfield } = this.state;
 		const alimentosBuscados = alimentos.filter(alimento =>{
@@ -47,7 +65,7 @@ export default class BuscarAlimento extends Component {
 					<SearchBox searchChange={this.onSearchChange}/>
 				</div>
 				<div>
-					<CardList alimentos={alimentosBuscados}/>
+					<CardList add={this.adicionarAlimento} alimentos={alimentosBuscados}/>
 				</div>
 			</div>
 			);
