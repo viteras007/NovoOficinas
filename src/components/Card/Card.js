@@ -84,7 +84,33 @@ const Card = ({ name, link, id, add }) => {
 								})
 						}}
 						/>
-						<Button className="p-button-raised p-button-rounded p-button-danger " label="Excluir Alimento" icon="pi pi-check" onClick="removerAlimento" />
+						<Button className="p-button-raised p-button-rounded p-button-danger " label="Excluir Alimento" icon="pi pi-check" onClick={() => {
+							alert("ID DO BAGUI PRA DELETAR: " + id)
+							fetch('http://localhost:3001/buscafood', {
+								method: 'post',
+								headers: { 'Content-Type': 'application/json' },
+								body: JSON.stringify({
+									id: id
+								})
+							})
+								.then(response => response.json())
+								.then(food => 
+									
+									
+									fetch('http://localhost:3001/delfood', {
+										method: 'delete',
+										headers: { 'Content-Type': 'application/json' },
+										body: JSON.stringify({
+											id: food.Id
+										})
+									})
+										.then(response => response.json())
+										.then(response => {
+											console.log(response)
+											alert("DELETADO COM SUCESSO")
+										})
+								)
+						}} />
 					</div>
 				</div>
 			</div>
