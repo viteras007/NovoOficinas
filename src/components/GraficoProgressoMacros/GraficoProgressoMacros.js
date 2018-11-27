@@ -7,19 +7,23 @@ import '../../components/GraficoProgressoMacros/GraficoProgressoMacros.css';
 
 export default class GraficoProgressoMacros extends Component {
 
-	constructor(props) {
+    constructor(props) {
         super(props);
         this.state = {
-            proteina: '30',
-            gordura: '40',
-            carboidrato: '50',
+            proteina: 1,
+            gordura: 1,
+            carboidrato: 1,
             iddieta: '',
             calorias: 0.001,
             carbototaldia: 0,
             proteintotaldia: 0,
             gordtotaldia: 0,
             caloriastotalrefeicao: 0,
-            caloriatotal: 0
+            caloriatotal: 0,
+            carboidratototaldieta: 0,
+            proteinatotaldieta: 0,
+            gorduratotaldieta: 0
+
         }
     }
     componentDidMount() {
@@ -33,7 +37,10 @@ export default class GraficoProgressoMacros extends Component {
             .then(response => response.json())
             .then(dieta => {
                 this.setState({
-                    iddieta: dieta.id
+                    iddieta: dieta.id,
+                    carboidratototaldieta: parseFloat(dieta.carboidrato).toFixed(2),
+                    proteinatotaldieta: parseFloat(dieta.proteina).toFixed(2),
+                    gorduratotaldieta: parseFloat(dieta.gordura).toFixed(2)
                 }, () => {
                     fetch('http://localhost:3001/refeicaototal', {
                         method: 'post',
@@ -62,9 +69,17 @@ export default class GraficoProgressoMacros extends Component {
                                 proteintotaldia: proteinaTotalDia
                             }, () => { })
                             let porcentagemcaloria = parseFloat((this.state.caloriatotal + this.state.caloriastotalrefeicao) / 100).toFixed(2)
+                            let porcentagemproteina = parseFloat((this.state.proteinatotaldieta + this.proteintotaldia) / 100).toFixed(2)
+                            let porcentagemcarboidrato = parseFloat((this.state.carboidratototaldieta + this.carbototaldia) / 100).toFixed(2)
+                            let porcentagemgordura = parseFloat((this.gorduratotaldieta + this.state.gordtotaldia) / 100).toFixed(2)
+                            console.log(porcentagemproteina)
                             this.setState({
-                                calorias: porcentagemcaloria
+                                calorias: porcentagemcaloria,
+                                proteina: porcentagemproteina,
+                                gordura: porcentagemgordura,
+                                carboidrato: porcentagemcarboidrato
                             }, () => { console.log(this.state) })
+
                         })
 
                 })
@@ -85,9 +100,9 @@ export default class GraficoProgressoMacros extends Component {
             })
     }
 
-	render() {
+    render() {
         const { proteina, gordura, carboidrato } = this.state;
-		return (
+        return (
             <div >
                 <div className="content-section introduction">
                     <div className="feature-intro">
@@ -100,6 +115,6 @@ export default class GraficoProgressoMacros extends Component {
                     <p className="conteudo">Carboidrato</p><ProgressBar now={carboidrato} label={`${carboidrato}%`} />
                 </div>
             </div>
-		)
-	}
+        )
+    }
 }
