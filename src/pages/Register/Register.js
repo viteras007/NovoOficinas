@@ -82,7 +82,7 @@ export default class Register extends Component {
                  val: ${val}
                  id: ${this.state.id}
                 `)
-                    alert("a")
+                    console.log("a")
                     fetch('http://localhost:3001/criardieta', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
@@ -97,7 +97,7 @@ export default class Register extends Component {
                         .then(response => response.json())
                         .then(user => {
                             console.log("Dieta criada");
-                            alert("a")
+                            console.log("a")
                         })
                 })
             })
@@ -114,7 +114,7 @@ export default class Register extends Component {
      height: ${this.state.height}
      idade: ${this.state.idade}
     `)
-        alert("A")
+        console.log("A")
 
         fetch('http://localhost:3001/register', {
             method: 'POST',

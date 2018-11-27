@@ -13,7 +13,7 @@ export default class AdicionarAlimento extends Component {
         super(props);
         this.state = {
             Vname: '',
-            Vcaloria: '10',
+            Vcaloria: 0,
             Vproteina: '',
             Vcarboidrato: '',
             Vgordura: '',
@@ -34,7 +34,11 @@ export default class AdicionarAlimento extends Component {
             })
         })
         .then(response => response.json())
-        .then(alert('INSERIDO COM SUCESSO'))
+        .then(food => {            
+            alert('INSERIDO COM SUCESSO')
+        })
+
+        
     }
 
   render() {
@@ -51,6 +55,13 @@ export default class AdicionarAlimento extends Component {
                         onChange={(event) => {this.setState({Vname: event.target.value})}}
                     />
                     <br />
+                    <label htmlFor="qtdCalorias" className="grey-text">Qtd. calorias:</label>
+                    <input 
+                        type="text" 
+                        id="qtdCalorias" 
+                        className="form-control"
+                        onChange={(event) => {this.setState({Vcaloria: event.target.value})}}
+                    />
                     <label htmlFor="qtdCarbo" className="grey-text">Qtd. carboidratos:</label>
                     <input 
                         type="text" 

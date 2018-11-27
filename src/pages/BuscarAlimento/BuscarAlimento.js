@@ -50,7 +50,7 @@ export default class BuscarAlimento extends Component {
 			.then(food => () =>{
 				console.log(food)
 			})*/
-			alert("ADD:"+id)		
+					
 	}
 	removerAlimento = () => {
 		alert("REMOVER ALIMENTO");

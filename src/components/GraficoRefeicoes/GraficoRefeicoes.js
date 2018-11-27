@@ -61,7 +61,7 @@ export default class GraficoRefeicoes extends Component {
                             let porcentagemcaloria = parseFloat((this.state.caloriatotal + this.state.caloriastotalrefeicao) / 100).toFixed(2)
                             this.setState({
                                 calorias: porcentagemcaloria
-                            }, () => { console.log(this.state) })
+                            }, () => { console.log("calorias: " + this.state.calorias) })
                         })
 
                 })

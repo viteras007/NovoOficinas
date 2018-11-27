@@ -79,10 +79,10 @@ export default class Dashboard extends Component {
                 gordtotaldia: gorduraTotalDia,
                 proteintotaldia: proteinaTotalDia
               }, () => {})
-              let porcentagemcaloria = parseFloat((this.state.caloriatotal + this.state.caloriastotalrefeicao) / 100).toFixed(2)
+              let porcentagemcaloria = parseFloat((this.state.caloriastotalrefeicao / this.state.caloriatotal) *100 ).toFixed(2)          
               this.setState({
                 calorias: porcentagemcaloria
-              }, () => { console.log("calorias: "+this.state.calorias)})
+              }, () => { console.log("calorias:"+this.state.calorias)})
             })
 
         })
@@ -117,10 +117,7 @@ export default class Dashboard extends Component {
           </div>
           <div className="container dashboardGraphics">
             <GraficoQtd></GraficoQtd>
-          </div>
-          <div className="container dashboardGraphics">
-            <GraficoMacros></GraficoMacros>
-          </div>
+          </div>          
           <div className="container dashboardGraphics">
             <GraficoRefeicoes></GraficoRefeicoes>
           </div>

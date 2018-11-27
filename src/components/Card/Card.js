@@ -19,7 +19,7 @@ const Card = ({ name, link, id, add }) => {
 					<p> {}</p>
 					<div className='cardbuttons'>
 						<Button className="p-button-raised p-button-rounded p-button-success " label="Add na refeiçao" icon="pi pi-check" onClick={() => {
-							alert("ID DO BAGUI: " + id)
+							
 							let iddadieta;
 
 							// busca dieta atual do usuario
@@ -78,14 +78,13 @@ const Card = ({ name, link, id, add }) => {
 									})
 										.then(response => response.json())
 										.then(refeicao => {
-											console.log("REFEICAO:")
-											console.log(refeicao)
+											alert("INSERIDO COM SUCESSO")
 										})
 								})
 						}}
 						/>
 						<Button className="p-button-raised p-button-rounded p-button-danger " label="Excluir Alimento" icon="pi pi-check" onClick={() => {
-							alert("ID DO BAGUI PRA DELETAR: " + id)
+							
 							fetch('http://localhost:3001/buscafood', {
 								method: 'post',
 								headers: { 'Content-Type': 'application/json' },
