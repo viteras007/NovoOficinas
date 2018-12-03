@@ -34,12 +34,13 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
   constructor(){   
-    super();    
+    super();           
     this.state = {
-      logado: 'false'     
-    }    
+      logado: 'false'  
+    }          
     //this.funclogado();
     console.log(this.state.logado)
+    console.log(localStorage.getItem('logado'))
   }
 
   
@@ -58,7 +59,10 @@ class App extends Component {
       });      
   }
   
-  componentDidMount(){    
+  componentDidMount(){  
+    if(!localStorage.getItem('logado')){
+      localStorage.setItem('logado', 'false')
+    }         
     fetch('http://localhost:3001/')
       .then(response => response.json())
       .then(console.log)                
@@ -67,9 +71,9 @@ class App extends Component {
 
 
   render() {
-    console.log("LOGADO: "+localStorage.getItem('logado'))        
+    //console.log("LOGADO: "+localStorage.getItem('logado'))        
     if (localStorage.getItem('logado') === 'false'){
-      return (
+      return (        
         <Router>
           <div>
             <IndexNavBar></IndexNavBar>                    
@@ -78,7 +82,7 @@ class App extends Component {
             <Route path="/login" render={(props) => <Login {...props} logar={this.funcaologar} />}/>
             <Route path="/register" component={Register}/>
           </div>
-        </Router>
+        </Router>        
         
       );
 
@@ -97,7 +101,7 @@ class App extends Component {
       );
     }
     else{
-
+      return (<h1>404 NOT FOUND</h1>);
     }
   }
 }

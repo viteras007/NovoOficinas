@@ -20,8 +20,9 @@ export default class Login extends Component {
   sessionClear = () => {
     //localStorage.clear();
     localStorage.removeItem('user');
-    localStorage.setItem('logado', false);
-    console.log("STORAGE:"+localStorage.getItem('logado'))
+    localStorage.setItem('logado', 'false');
+    console.log("NOVO DPS DO LOGOUT STORAGE:"+localStorage.getItem('logado'))
+    window.parent.location.reload();
     
   }
   render() {    

@@ -12,29 +12,29 @@ import '../../pages/BuscarAlimento/BuscarAlimento.css'
 
 
 export default class BuscarAlimento extends Component {
-    constructor(){
-	    super()
-	    this.state = {
+	constructor() {
+		super()
+		this.state = {
 			alimentos: [],
 			searchfield: ''
-	    }
-    }
+		}
+	}
 
-    componentDidMount() {
-        // colocar aqui a busca no banco de dados de onde vai consumir os dados
+	componentDidMount() {
+		// colocar aqui a busca no banco de dados de onde vai consumir os dados
 		fetch('http://localhost:3001/allfood')
 			.then(response => response.json())
-			.then(food => this.setState({ 
-				alimentos: food 
+			.then(food => this.setState({
+				alimentos: food
 			}, () => {
-				
+
 			}));
-					
+
 	}
 
 	onSearchChange = (event) => {
-		this.setState( { searchfield: event.target.value } );
-				
+		this.setState({ searchfield: event.target.value });
+
 	}
 
 	adicionarAlimento = (id) => {
@@ -50,30 +50,34 @@ export default class BuscarAlimento extends Component {
 			.then(food => () =>{
 				console.log(food)
 			})*/
-					
+
 	}
 	removerAlimento = () => {
 		alert("REMOVER ALIMENTO");
 	}
-    render(){
+	render() {
 		const { alimentos, searchfield } = this.state;
-		const alimentosBuscados = alimentos.filter(alimento =>{
-			return alimento.name.toLowerCase().includes(searchfield.toLowerCase());
-		})
-		if(!alimentos.length){
-			return <h1 className='tc'>Loading</h1>
-		} else { 
-			return(
-			<div className='tc container'>
-				<div className='centralizar'>
-					<h1 className='f2'>Alimentos</h1>
-					<SearchBox searchChange={this.onSearchChange}/>
-				</div>
-				<div>
-					<CardList add={this.adicionarAlimento} alimentos={alimentosBuscados}/>
-				</div>
-			</div>
+		const alimentosBuscados = alimentos.filter(alimento => {
+			return (
+				alimento.name.toLowerCase().includes(searchfield.toLowerCase())
 			);
-		}	
+		})
+		if (!alimentos.length) {
+			return (
+				<h1 className='tc'>Loading</h1>
+			);
+		} else {
+			return (
+				<div className='tc container'>
+					<div className='centralizar'>
+						<h1 className='f2'>Alimentos</h1>
+						<SearchBox searchChange={this.onSearchChange} />
+					</div>
+					<div>
+						<CardList add={this.adicionarAlimento} alimentos={alimentosBuscados} />
+					</div>
+				</div>
+			);
+		}
 	}
 }

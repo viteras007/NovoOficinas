@@ -23,13 +23,12 @@ export default class AlterarMeta extends Component {
     }
 
 
-    onSubmitAltera = () => {
-                
+    onSubmitAltera = () => {        
         fetch('http://localhost:3001/progresso', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({                
-                peso: JSON.parse(localStorage.getItem('user')).weight,
+                peso: this.state.Peso,
                 idusuario: JSON.parse(localStorage.getItem('user')).Id
             })
         })
@@ -77,7 +76,7 @@ export default class AlterarMeta extends Component {
             .then(response => response.json())
             .then(alert('INSERIDO COM SUCESSO'))
 
-        
+            window.parent.location.reload();
     }
 
 

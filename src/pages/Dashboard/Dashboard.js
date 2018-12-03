@@ -39,7 +39,7 @@ export default class Dashboard extends Component {
   }
 
   componentDidMount() {
-
+    
     //pegar o id da dieta
     fetch('http://localhost:3001/dietatotal', {
       method: 'post',
@@ -104,9 +104,8 @@ export default class Dashboard extends Component {
       })
   }
 
-  render() {
-    return (
-
+  render() {        
+    return (      
       <div>
 
         <div className='container'>
@@ -126,6 +125,6 @@ export default class Dashboard extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }

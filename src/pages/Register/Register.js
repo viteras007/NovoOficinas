@@ -210,6 +210,6 @@ export default class Register extends Component {
                     </form>
                 </div>
             </div>
-        )
+        );
     }
 }

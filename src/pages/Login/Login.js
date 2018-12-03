@@ -40,7 +40,8 @@ export default class Login extends Component {
             .then(user => {
                 if(user.Id){                    
                     localStorage.setItem('user', JSON.stringify(user));                    
-                    localStorage.setItem('logado', true);
+                    localStorage.setItem('logado', 'true');
+                    console.log("LOCALSTORAGE QND LOGA:"+localStorage.getItem('logado'))
                     this.props.logar(localStorage.getItem('logado'));                    
                     //this.funcaoteste(true);
                     // ROTA PARA ELE LOGADO
@@ -48,7 +49,7 @@ export default class Login extends Component {
 
                 }
                 else{                    
-                    localStorage.setItem('logado', false);
+                    localStorage.setItem('logado', 'false');
                     // MENSAGEM DE ERRO
                 }
             })
@@ -99,6 +100,6 @@ export default class Login extends Component {
                 </Form>
             </div>
         </div>
-    )
+    );
   }
 }

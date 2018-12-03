@@ -86,6 +86,6 @@ export default class PaginaInicial extends Component {
           </div> 
           </div>      
       </div>
-    )
+    );
   }
 }
